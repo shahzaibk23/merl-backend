@@ -1,0 +1,56 @@
+{% load static %}
+
+<div data-aos="fade-up" class="footer-dark degra-azul" style="padding-bottom: 0px;">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3 item" style="font-family: Lato, sans-serif;width: 30%;"><img src="{% static 'img/logo_white.png' %}" style="height: 100px;">
+                    <h3><img id="imagen-separa-1" src="{% static 'img/separa_34.png' %}"> </h3>
+                    <ul>
+                        <li style="text-align: justify;"><br>MERL, acronym for Micro Electronics Research Labs, is housed in different universities across Pakistan. Our Vision is to grow and build a platform to promote the research and development of semiconductor technologies in Pakistan.<br><br><br></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item" style="font-family: Lato, sans-serif;width: 25%;">
+                    <div class="d-flex align-items-end" style="height: 100px;">
+                        <h3 style="text-align: left;">About</h3>
+                    </div>
+                    <h3><img id="imagen-separa-2" src="{% static 'img/separa_34.png' %}"> </h3>
+                    <ul style="padding-top: 21px;">
+                        <li><i class="fa fa-map-marker espacio-ico-01"></i><a href="#">UIT: ST-13, Block 7, Gulshan-e-Iqbal, Abul Hasan Isphahani Road,<br>Opposite Safari Park, Karachi 75300.<br><br></a></li>
+                        <li><i class="fa fa-phone espacio-ico-01"></i><a href="#">UIT: +92 (213) 499 4305<br></a></li>
+                        <li style="padding-top: 20px;"><i class="fa fa-envelope espacio-ico-01"></i><a href="#"><strong>Info: merl@uit.edu</strong><br></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item" style="font-family: Lato, sans-serif;width: 20%;">
+                    <div class="d-flex align-items-end" style="height: 100px;">
+                        <h3>Links</h3>
+                    </div>
+                    <h3><img id="imagen-separa-3" src="{% static 'img/separa_34.png' %}"> </h3>
+                    <ul style="padding-top: 20px;">
+                        <li><a href="{% url 'home' %}">Home<i class="fa fa-arrow-circle-right espacio-ico-01"></i></a></li>
+                        <li><a href="{% url 'about' %}">About Us<i class="fa fa-arrow-circle-right espacio-ico-01"></i></a></li>
+                        <li><a href="{% url 'teams' %}">Our Team<i class="fa fa-arrow-circle-right espacio-ico-01"></i></a></li>
+                        <li><a href="{% url 'news' %}">Newsroom<i class="fa fa-arrow-circle-right espacio-ico-01"></i></a></li>
+                        <li><a href="{% url 'careers' %}">Careers<i class="fa fa-arrow-circle-right espacio-ico-01"></i></a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item" style="font-family: Lato, sans-serif;width: 25%;">
+                    <div class="d-flex align-items-end" style="height: 100px;">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <h3><img id="imagen-separa-4" src="{% static 'img/separa_34.png' %}"> </h3>
+                    <ul style="padding-top: 20px;">
+                        <li>Subscribe to our Newsletter<br></li>
+                    </ul>
+                    <form style="margin-top:19px;" method="post">
+                        <div class="form-group mb-3"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
+                        <div class="form-group mb-3"><button class="btn btn-primary" type="submit">Subscribe </button></div>
+                    </form>
+                </div>
+                <div class="col-sm-4 col-md-12 item social" style="padding-top:30px;"><a target="_blank" href="https://www.facebook.com/merluit"><i class="icon ion-social-facebook"></i></a><a target="_blank" href="https://twitter.com/merluit"><i class="icon ion-social-twitter"></i></a><a target="_blank" href="https://www.linkedin.com/company/merluit/"><i class="icon icon-social-linkedin"></i></a><a target="_blank" href="https://github.com/merledu"><i class="icon icon-social-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <p class="copyright"><br>Copyright ©&nbsp;2021 - Micro Electronics Research Labs.<br><br><br></p>
+</div>

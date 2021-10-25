@@ -1,0 +1,411 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="clean-block">
+    <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bss-parallax-bg="true" style="background-image: url('{% static 'img/bg.jpg' %}');background-position: center;background-size: cover;height: 100vh;">
+                <div class="container">
+                    <div class="row" style="padding-top: 30vh;">
+                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                            <h1 style="font-size: 60px;">Welcome To</h1>
+                            <h1>MERL</h1>
+                            <h4 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Fostering Semiconductor Technology</h4>
+                            <h4 style="text-shadow: 2px 2px 10px rgb(0 0 0);">IC Design, Research and Development</h4>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg2.jpg' %}');background-position: center;background-size: cover;">
+                <div class="container">
+                    <div class="row" style="padding-top: 60vh;">
+                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                            <h2 style="font-size: 40px;text-shadow: 2px 2px 10px rgb(0 0 0);"><br>For the First Time in Pakistan&nbsp;<br></h2>
+                            <h2 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Adapting Semiconductor Revolution</h2>
+                            <h2 style="text-shadow: 2px 2px 10px rgb(0 0 0);"></h2>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg3.png' %}');background-position: center;background-size: cover;">
+                <div class="container">
+                    <div class="row" style="padding-top: 30vh;">
+                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                            <h1 style="font-size: 50px;">Industry x Academia</h1>
+                            <h3 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Developing Semiconductor Ecosystem in Academic Sector</h3>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg4.jpg' %}');background-position: center;background-size: cover;">
+                <div class="container">
+                    <div class="row" style="padding-top: 30vh;">
+                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                            <h1 style="font-size: 40px;">International Collaborations</h1>
+                            <h3 style="text-shadow: 2px 2px 10px rgb(0 0 0);">The Organizations and Industries we have collaborated with</h3>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+        </ol>
+    </div>
+</section>
+    <section class="clean-block attr-section">
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-evenly">
+                <div>
+                    <h6>Designing</h6>
+                    <h5>System-on-Chip</h5>
+                </div><img src="{% static 'img/chip_icon.png' %}" style="width: 90px;">
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-evenly">
+                <div>
+                    <h6>Developing</h6>
+                    <h5>Tools and Simulators</h5>
+                </div><img src="{% static 'img/tools.png' %}" style="width: 50px;">
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-evenly">
+                <div>
+                    <h6>Engineering</h6>
+                    <h5>Verification Aspects</h5>
+                </div><img src="{% static 'img/verification.png' %}" style="width: 70px;">
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-evenly">
+                <div>
+                    <h6>Researching</h6>
+                    <h5>RISC-V</h5>
+                </div><img src="{%static 'img/rv.png' %}" style="width: 200px;">
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services" style="padding-bottom: 100px;">
+        <div class="container-md section-title" style="padding-top: 100px;">
+            <div class="text-center">
+                <h2 style="color: #34a4dc;">MERL is based on <span style="color: #3466ac;"><strong>&nbsp;four pillars</strong></span>.</h2>
+                <p class="d-inline-block" style="width: 50%;">Atributes that enabled MERL to achieve such enormous progress.<br>&nbsp; &nbsp;&nbsp;</p>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-globe" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Development of Ecosystem<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL is working towards development of such an ecosystem where students can evolve and become the best version of theirselves.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-microchip" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">State-of-the-art Technology<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem provides students with an opportunity to work with the state of the art technologies.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Thinking Out of the Box<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem enables individuals to push further than one's limit and step out of one's comfort zone.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-laptop-code" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Peer to Peer Learning Methodology<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem allows students to bring out their inner teacher-self and forward their skills to other fellow students.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="w_shop_105" class="carousel slide w_shop_105_indicators w_shop_105_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-duration="2000" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="8000">
+            <div class="w_shop_105_main_header">
+                <h1><span><strong>featured</strong></span><span><strong>PROJECTS</strong></span></h1>
+            </div>
+            <ol class="carousel-indicators">
+                <li class="active" style="filter: blur(0px);" data-bs-target="#w_shop_105" data-bs-slide-to="0"></li>
+                <li data-bs-target="#w_shop_105" data-bs-slide-to="1"></li>
+                <li data-bs-target="#w_shop_105" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                
+                <div class="carousel-item active">
+                    <img src="{% static 'img/w_shop_105_01.png' %}" alt="w_shop_105_01">
+                    <div class="w_shop_105_left_box">
+                        <span data-animation="animated fadeInLeft" style="font-family: roboto;">{{projects.0.0.project.category.name}}</span>
+                        <h1 class="left-h" data-animation="animated fadeInLeft">{{ projects.0.0.title }}</h1>
+                        <p data-animation="animated fadeInLeft">{{projects.0.0.description}}</p>
+                        <a href="{{projects.0.0.getURL}}" data-animation="animated fadeInLeft">Show Details</a>
+                    </div>
+                    <div class="w_shop_105_right_box" data-animation="animated fadeInRight">
+                        <h5 data-animation="animated fadeInRight"> Team Members </h5>
+                        <ul>
+                            {% for team in projects.0.1 %}
+                            <li data-animation="animated fadeInRight">{{team.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        <h5 data-animation="animated fadeInRight"> Mentors </h5>
+                        <ul>
+                            {% for mentor in projects.0.2 %}
+                            <li data-animation="animated fadeInRight">{{mentor.name}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="carousel-item"><img src="{% static 'img/w_shop_105_02.png' %}" alt="w_shop_105_02">
+                    <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;">{{projects.1.0.project.category.name}}</span>
+                        <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.1.0.title}}</h1>
+                        <p data-animation="animated fadeInLeft">{{projects.1.0.description}}</p>
+                        <a href="{{projects.1.0.getURL}}" data-animation="animated fadeInLeft">Show Details</a>
+                    </div>
+                    <div class="w_shop_105_right_box" data-animation="animated fadeInRight">
+                        <h5 data-animation="animated fadeInRight"> Team Members </h5>
+                        <ul>
+                            {% for team in projects.1.1 %}
+                            <li data-animation="animated fadeInRight">{{team.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        <h5 data-animation="animated fadeInRight"> Mentors </h5>
+                        <ul>
+                            {% for mentor in projects.1.2 %}
+                            <li data-animation="animated fadeInRight">{{mentor.name}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item"><img src="{% static 'img/w_shop_105_02.png' %}" alt="w_shop_105_02">
+                    <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;text-align: justify;">{{projects.2.0.project.category.name}}</span>
+                        <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.2.0.title}}</h1>
+                        <p data-animation="animated fadeInLeft">{{projects.2.0.description}}</p>
+                        <a href="{{projects.2.0.getURL}}" data-animation="animated fadeInLeft">Show Details</a>
+                    </div>
+                    <div class="w_shop_105_right_box" data-animation="animated fadeInRight">
+                        <h5 data-animation="animated fadeInRight"> Team Members </h5>
+                        <ul>
+                            {% for team in projects.2.1 %}
+                            <li data-animation="animated fadeInRight">{{team.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        <h5 data-animation="animated fadeInRight"> Mentors </h5>
+                        <ul>
+                            {% for mentor in projects.2.2 %}
+                            <li data-animation="animated fadeInRight">{{mentor.name}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-top: 100px;">
+        <div class="container">
+            <h1 style="padding-bottom: 25px;">Latest News</h1>
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    {% for new in news %}
+                    <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% if new.cover %} {{ new.cover.url }} {% else %} {% static 'blog-1.jpg' %} {% endif %}" style="width: 100%;"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">{{new.date}}</span><div class="blog-slider__title">{{new.title}}</div><div style="height: 100px;overflow:hidden;" class="blog-slider__text">{{new.content|safe}} </div><a class="class=&quot;blog-slider__button" href="{{new.getURL}}">READ MORE</a></div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% static 'blog-2.jpg' %}"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
+                    </div>
+                    <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% static 'blog-3.jpg' %}"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
+                    </div> -->
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="/*background: linear-gradient(to bottom, #2d91c2 0%,#1e528e 100%);*/padding-top: 100px;">
+        <div data-bss-parallax-bg="true" style="  background-image: url('{% static 'img/tech.jpg' %}'); background-position: center;background-size: cover;padding-top: 100px;">
+            <div class="container">
+                <h1 style="color: rgb(255,255,255);text-align: center;">Testimonials</h1>
+            </div><style>
+
+.slick-prev:before {
+  content: "<";
+  color: rgb(146, 146, 146);
+  background-color: white;
+  border-radius: 100px;
+  border-color: none;
+  padding: 10px 16px;
+  font-size: 20px;
+  margin-left: -25px;
+}
+
+.slick-next:before {
+  content: ">";
+  color: rgb(146, 146, 146);
+  background-color: white;
+  border-radius: 100px;
+  border-color: none;
+  padding: 10px 16px;
+  font-size: 20px;
+  margin-right: -25px;
+}
+
+    /* Bubble Slider */
+
+.bubble blockquote {
+	margin: 10px 10px 0;
+	background: #fff;
+	padding: 60px;
+	position: relative;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.25em;
+	color: #1e528e;
+}
+.bubble blockquote:before, .bubble blockquote:after {
+	content: "\201C";
+	position: absolute;
+	font-size: 80px;
+	padding: 10px;
+	line-height: 1;
+	color: #1e528e;
+}
+.bubble blockquote:before {
+	top: 0;
+	left: 10px;
+}
+.bubble blockquote:after {
+	content: "\201D";
+	right: 10px;
+	bottom: -.5em;
+}
+.bubble div {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #fff;
+	margin: 0 0 0 60px;
+	margin-bottom: 10px;
+}
+.bubble cite {
+	padding-left: 20px;
+	font-size: 1.25em;
+  color:#f7f7f7;
+}
+
+
+
+.quotes {
+	width: 70%;
+	margin: 70px auto;
+
+}
+</style>
+
+<!-- Speech Bubble Slider -->
+
+<section class="quotes">
+    {% for test in tests %}
+    <div class="bubble">
+      <blockquote>
+          {{ test.content|safe }}
+      </blockquote>
+      <div></div>
+      <cite><a href="{{test.link}}" target="_blank" style="text-decoration: none;color: white;"><i class="{{test.platform.icon}}"></i> {{test.author}} </a></cite> 
+    </div>
+    {% endfor %}
+    <!-- <div class="bubble">
+      <blockquote> Peace is not a relationship of nations. It is a condition of mind brought about by a serenity of soul. Peace is not merely the absence of war. It is also a state of mind. Lasting peace can come only to peaceful people.
+  </blockquote>
+      <div></div>
+      <cite> Someone </cite> </div>
+    <div class="bubble">
+      <blockquote> Forgiveness is not always easy. At times, it feels more painful than the wound we suffered, to forgive the one that inflicted it. And yet, there is no peace without forgiveness.
+  </blockquote>
+      <div></div>
+      <cite> Someone </cite> </div>
+    <div class="bubble">
+      <blockquote>Of all our dreams today there is none more important - or so hard to realise - than that of peace in the world. May we never lose our faith in it or our resolve to do everything that can be done to convert it one day into reality. </blockquote>
+      <div></div>
+      <cite> Someone </cite> </div> -->
+  </section>
+  <br><br><br>
+
+  <script>
+      
+$('.quotes').slick({
+  dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 6000,
+  speed: 800,
+  slidesToShow: 1,
+  adaptiveHeight: true
+});
+
+$( document ).ready(function() {
+$('.no-fouc').removeClass('no-fouc');
+});
+
+  </script>
+        </div>
+    </section>
+    <section style="padding-top: 100px;padding-bottom: 40px;">
+        <section>
+            <div class="container text-center">
+                <div class="row pt-5">
+                    <div class="col-md-8 offset-md-2">
+                        <h1>Achievements</h1>
+                        <p class="m-0 lead">The journey of MERL can be measured with more than just numbers.</p>
+                    </div>
+                </div>
+                <div class="row pb-5" style="color: #4d4d4e;">
+                    <div class="col-sm-6 col-lg-3 pt-5">
+                        <p class="m-0" style="color: #3466ac;"><i class="fa fa-gear fa-3x" aria-hidden="true"></i></p>
+                        <p class="m-0 display-4"> <span class="nbanimate">22</span></p>
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 pt-5">
+                        <p class="m-0" style="color: #3466ac;"><i class="fa fa-refresh fa-3x" aria-hidden="true"></i></p>
+                        <p class="m-0 display-4"> <span class="nbanimate nbreplay">8</span></p>
+                        <h2>Talks</h2>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 pt-5">
+                        <p class="m-0"><i class="fa fa-bar-chart-o fa-3x" aria-hidden="true" style="color: #3466ac;"></i></p>
+                        <p class="m-0 display-4"> <span class="nbanimate">35</span><small><sup>+</sup></small></p>
+                        <h2>Interns</h2>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 pt-5">
+                        <p class="m-0"><i class="fa fa-heart-o fa-3x" aria-hidden="true" style="color: #3466ac;"></i></p>
+                        <p class="m-0 display-4"> <span class="nbanimate">100</span><small><sup>+</sup></small></p>
+                        <h2>Team Members</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    
+
+{% endblock %}
+    

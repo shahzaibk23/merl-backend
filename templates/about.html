@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)), url('{% static 'img/about.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">About MERL</h1>
+            </div>
+        </div>
+    </section>
+    <section class="normal-section">
+        <div data-bss-parallax-bg="true" style="/*color: white;*//*background: linear-gradient(rgba(0,0,0,0.27), rgba(0,0,0,0.26) 97%), url(&quot;assets/img/about5.jpg&quot;) center / cover;*/">
+            <div class="container">
+                <h1 style="/*background-color: #f3ec78;*//*background-image: linear-gradient( 176deg, rgb(13,75,106) 31%, rgb(0,20,30) 100%);*/background-size: 100%;/*-webkit-background-clip: text;*//*-moz-background-clip: text;*//*-webkit-text-fill-color: transparent;*//*-moz-text-fill-color: transparent;*/text-align: center;border-bottom: 1px solid rgba(33,37,41,0.5);padding-bottom: 15px;">MERL - Micro Electronics Research Lab</h1>
+                <div>
+                    <h2>Vision</h2>
+                    <p style="text-align: justify;">To enable Pakistan to become a recognized global player in the microelectronics industry.<br></p>
+                </div>
+                <div>
+                    <h2>Mission</h2>
+                    <p style="text-align: justify;">To establish Microelectronics Research Laboratories chapters in the universities of Pakistan where research and development can be carried out on RISC-V based ASICs, FPGAs, and SoCs.<br></p>
+                </div>
+                <div>
+                    <h2>Philosophy</h2>
+                    <p style="text-align: justify;">Microelectronics Research Laboratories (MERL) has an ambitious plan to lead microelectronics research and development in Pakistan. Although it is an engineering enterprise providing cutting-edge exposure to the people working for it, the MERL administration also strongly motivates them, not by the example of its power but by the power of its example, to exhibit the highest codes of personal and professional development.<br></p>
+                </div>
+                <div>
+                    <h2>Multi Project Wafer (MPW) Service</h2>
+                    <ul>
+                        <li>Deals with foundries like Global foundries, TSMC and SMC etc.<br></li>
+                        <li>Offers a cost competitive service for aggregating blocks/IPs from within Pakistan.<br></li>
+                        <li>Minimum area MPW block Size would be bought from foundries and offered in smaller sub-blocks to academic institutions.<br></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Design Tools and Training</h2>
+                    <ul>
+                        <li>Acquire academic EDA licenses for SoC design.<br></li>
+                        <li>Offers training in the use of the design tools.<br></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 style="text-align: center;">MERL System-on-Chip Services</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

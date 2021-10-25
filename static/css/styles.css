@@ -1,0 +1,47 @@
+.left-col h1 {
+  font-size: 65px;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgb(0 0 0);
+}
+.left-col h4 {
+  text-shadow: 2px 2px 10px rgb(0 0 0);
+  text-align: justify;
+}
+.attr-section .col-md-3 {
+  background: linear-gradient( 180deg, rgb(13,75,106) 31%, rgb(0,20,30) 100%);
+  padding-top: 10px;
+  border: rgba(255,255,255,0.25) solid 0.1px;
+  padding-bottom: 10px;
+}
+
+.attr-section h6 {
+  color: white;
+  font-weight: 100;
+}
+
+.attr-section h5 {
+  color: white;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.footer-dark .item.social > a:hover {
+  color: #3466ac;
+  background-color: rgb(255,255,255);
+}
+
+.normal-section {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.news-content {
+  text-align: justify;
+  height: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}

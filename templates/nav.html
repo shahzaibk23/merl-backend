@@ -1,0 +1,137 @@
+{% load static %}
+
+<div class="header2">
+    <div class="">
+      <!-- Header 1 code -->
+      <nav class="navbar navbar-expand-lg h2-nav fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo_white.png' %}" alt="logo" style="width:100%" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-menu"></span>
+          </button>
+          <div class="collapse navbar-collapse hover-dropdown" id="header2">
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item active"><a class="nav-link" href="#">Home</a></li> -->
+              <li class="nav-item dropdown position-relative">
+                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Discover MERL <i class="icon-arrow-down ml-1 font-12"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'about' %}">Vision & Strategy</a></li>
+                  <li><a class="dropdown-item" href="{% url 'teams' %}">Our Team</a></li>
+                  <li><a class="dropdown-item" href="{% url 'tab' %}">Technical Advisory Board - TAB</a></li>
+                  <li><a class="dropdown-item" href="{% url 'projects' %}">Projects Teams</a></li>
+                  <li><a class="dropdown-item" href="{% url 'talks' %}">MERL Talks</a></li>
+                  
+                </ul>
+              </li>
+              <li class="nav-item dropdown position-relative">
+                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Research & Development <i class="icon-arrow-down ml-1 font-12"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  {% for cat in nav.0 %}
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">{{cat.0.name}} <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      {% for proj in cat.1 %}
+                      <li><a class="dropdown-item" href="{{ proj.getURL }}">{{proj.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                  <!-- <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">VERILOG.based(SoC) <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Ghazi (غازی)</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Verification() <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Burq</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Projects(Research) <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Reverse Engineering of Rocket Chip</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Research(Compiler) <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">LLVM Compiler</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Simulators() <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Oxygen Simulator</a></li>
+                    </ul>
+                  </li> -->
+                </ul>
+              </li>
+              <li class="nav-item dropdown position-relative">
+                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Trainings <i class="icon-arrow-down ml-1 font-12"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">RISC-V ISA</a></li>
+                  <li><a class="dropdown-item" href="#">RTL Modeling</a></li>
+                  {% for trainCat in nav.1 %}
+                  <li class="dropdown-submenu position-relative"> 
+                    <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">{{ trainCat.0.name }} <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      {% for train in trainCat.1 %}
+                      <li><a class="dropdown-item" href="{{train.getURL}}">{{train.name}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <!-- <li class="nav-item dropdown position-relative">
+                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Discover(MERL) <i class="icon-arrow-down ml-1 font-12"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li class="divider" role="separator"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                  <li class="divider" role="separator"></li>
+                  <li><a class="dropdown-item" href="#">One more separated link</a></li>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                        <ul class="nav navbar-nav dropdown-menu">
+                          <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              <li class="divider" role="separator"></li>
+                              <li><a class="dropdown-item" href="#">Separated link</a></li>
+                              <li class="divider" role="separator"></li>
+                              <li><a class="dropdown-item" href="#">One more separated link</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li> -->
+              <li class="nav-item"><a class="nav-link" href="{% url 'news' %}">Newsroom</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Work with us </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
+            </ul>
+            <!-- <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a class="nav-link" href="#"><i class="icon-bubble"></i> Need help?</a></li>
+              <li class="nav-item active"><a class="nav-link" href="#">Login</a></li>
+              <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" href="#">Sign up</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </nav>
+      <!-- End Header 1 code -->
+    </div>
+  </div>
