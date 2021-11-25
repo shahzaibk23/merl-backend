@@ -14,6 +14,7 @@ class project(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey(category, null=True, blank=True, on_delete=models.CASCADE)
     content = models.TextField()
+    thumbnail = models.ImageField(null=True, blank=True)
     image1 = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)
