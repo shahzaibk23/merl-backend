@@ -243,6 +243,17 @@ body {
   }
 }
 
+@media (max-width:500px) {
+  .left-col h1{
+    font-size: 40px !important;
+  }
+  .hero-row{
+    padding-top: 26vh !important;
+  }
+  .left-col h4 {
+      margin-top: 23vh !important;
+  }
+}
 
 
 @media all and (max-width: 991px) {
