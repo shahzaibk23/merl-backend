@@ -28,6 +28,9 @@
 body {
   overflow-x: hidden;
 }
+body > * {
+  overflow-x: hidden;
+}
 
 .footer-dark .item.social > a:hover {
   color: #3466ac;
