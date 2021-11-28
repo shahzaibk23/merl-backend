@@ -246,6 +246,10 @@ body > * {
   }
 }
 
+title{
+  display: none;
+}
+
 @media (max-width:500px) {
   .left-col h1{
     font-size: 40px !important;
