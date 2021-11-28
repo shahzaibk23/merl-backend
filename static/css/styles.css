@@ -256,6 +256,15 @@ body > * {
   .left-col h4 {
       margin-top: 23vh !important;
   }
+  .bubble blockquote{
+    text-align: justify !important;
+    font-size: 0.95rem !important;
+  }
+  .bubble blockquote h6 {
+    font-size: 0.8rem !important;
+    text-align: left !important;
+  }
+
 }
 
 
