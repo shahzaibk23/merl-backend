@@ -1,93 +1,116 @@
 {% load static %}
 
-<div class="header2">
-    <div class="">
-      <!-- Header 1 code -->
-      <nav class="navbar navbar-expand-lg h2-nav fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo_white.png' %}" alt="logo" style="width:60%" /></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-menu"></span>
-          </button>
-          <div class="collapse navbar-collapse hover-dropdown" style="font-size: 14px;" id="header2">
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item active"><a class="nav-link" href="#">Home</a></li> -->
-              <li class="nav-item dropdown position-relative">
-                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Discover MERL <i class="icon-arrow-down ml-1 font-12"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'about' %}">Vision & Strategy</a></li>
-                  <li><a class="dropdown-item" href="{% url 'teams' %}">Our Team</a></li>
-                  <li><a class="dropdown-item" href="{% url 'tab' %}">Technical Advisory Board - TAB</a></li>
-                  <li><a class="dropdown-item" href="{% url 'projects' %}">Projects Teams</a></li>
-                  <li><a class="dropdown-item" href="{% url 'talks' %}">MERL Talks</a></li>
-                  
-                </ul>
-              </li>
-              <li class="nav-item dropdown position-relative">
-                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Research & Development <i class="icon-arrow-down ml-1 font-12"></i>
-                </a>
 
-                <ul class="dropdown-menu">
-                  {% for cat in nav.0 %}
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">{{cat.0.name}} <i class="icon-arrow-right float-right mt-1"></i></a>
-                    <ul class="dropdown-menu">
-                      {% for proj in cat.1 %}
-                      <li><a class="dropdown-item" href="{{ proj.getURL }}">{{proj.title}}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                  {% endfor %}
-                  <!-- <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">VERILOG.based(SoC) <i class="icon-arrow-right float-right mt-1"></i></a>
+<!-- MOBILE NAV -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!--  -->
+
+<!-- MAIN NAV -->
+
+
+
+<div class="header2">
+  <div class="">
+    <!-- Header 1 code -->
+    
+    <nav class="navbar navbar-expand-lg h2-nav fixed-top">
+      <div class="container">
+        <a class="navbar-brand logo logo-main" id="white_logo" href="{% url 'home' %}"><img class="logo_img" src="{% static 'img/logo_white.png' %}"
+          alt="logo" style="height:70px" /></a>
+      <a class="navbar-brand logo logo-main" id="unwhite_logo" href="{% url 'home' %}"><img class="logo_img" src="{% static 'img/logo (1).png' %}"
+          alt="logo" style="height:70px" /></a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#header2"
+          aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-menu"></span>
+        </button> -->
+        <i id="burger" class="material-icons mob_nav" onclick="burger()">menu</i>
+        <i id="quit" class="material-icons" onclick="quit()">clear</i>
+        <div id="links" class="collapse navbar-collapse hover-dropdown justify-content-center" style="font-size: 14px;" id="header2">
+          <ul class="navbar-nav" >
+            <!-- <li class="nav-item active"><a class="nav-link" href="#">Home</a></li> -->
+            <li class="nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Discover MERL <i class="icon-arrow-down ml-1 font-12"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'about' %}">Vision & Strategy</a></li>
+                <li><a class="dropdown-item" href="{% url 'teams' %}">Our Team</a></li>
+                <li><a class="dropdown-item" href="{% url 'tab' %}">Technical Advisory Board - TAB</a></li>
+                <li><a class="dropdown-item" href="{% url 'projects' %}">Projects Teams</a></li>
+                <li><a class="dropdown-item" href="{% url 'talks' %}">MERL Talks</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Research & Development <i class="icon-arrow-down ml-1 font-12"></i>
+              </a>
+
+              <ul class="dropdown-menu">
+                {% for cat in nav.0 %}
+                <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item"
+                    data-bs-toggle="dropdown" aria-expanded="true" href="#">{{cat.0.name}} <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <ul class="dropdown-menu">
+                    {% for proj in cat.1 %}
+                    <li><a class="dropdown-item" href="{{ proj.getURL }}">{{proj.title}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                {% endfor %}
+                <!-- <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">VERILOG.based(SoC) <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Ghazi (غازی)</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Verification() <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">Verification() <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Burq</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Projects(Research) <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">Projects(Research) <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Reverse Engineering of Rocket Chip</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Research(Compiler) <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">Research(Compiler) <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">LLVM Compiler</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Simulators() <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">Simulators() <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Oxygen Simulator</a></li>
                     </ul>
                   </li> -->
-                </ul>
-              </li>
-              <li class="nav-item dropdown position-relative">
-                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Trainings <i class="icon-arrow-down ml-1 font-12"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">RISC-V ISA</a></li>
-                  <li><a class="dropdown-item" href="#">RTL Modeling</a></li>
-                  {% for trainCat in nav.1 %}
-                  <li class="dropdown-submenu position-relative"> 
-                    <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">{{ trainCat.0.name }} <i class="icon-arrow-right float-right mt-1"></i></a>
-                    <ul class="dropdown-menu">
-                      {% for train in trainCat.1 %}
-                      <li><a class="dropdown-item" href="{{train.getURL}}">{{train.name}}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </li>
-              <!-- <li class="nav-item dropdown position-relative">
-                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </ul>
+            </li>
+            <li class="nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Trainings <i class="icon-arrow-down ml-1 font-12"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">RISC-V ISA</a></li>
+                <li><a class="dropdown-item" href="#">RTL Modeling</a></li>
+                {% for trainCat in nav.1 %}
+                <li class="dropdown-submenu position-relative">
+                  <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">{{ trainCat.0.name }} <i
+                      class="icon-arrow-right float-right mt-1"></i></a>
+                  <ul class="dropdown-menu">
+                    {% for train in trainCat.1 %}
+                    <li><a class="dropdown-item" href="{{train.getURL}}">{{train.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <!-- <li class="nav-item dropdown position-relative">
+                <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Discover(MERL) <i class="icon-arrow-down ml-1 font-12"></i>
                 </a>
                 <ul class="dropdown-menu">
@@ -98,12 +121,12 @@
                   <li><a class="dropdown-item" href="#">Separated link</a></li>
                   <li class="divider" role="separator"></li>
                   <li><a class="dropdown-item" href="#">One more separated link</a></li>
-                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                  <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                      <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-bs-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
                         <ul class="nav navbar-nav dropdown-menu">
-                          <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
+                          <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-bs-toggle="dropdown">Dropdown <i class="icon-arrow-right float-right mt-1"></i></a>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="#">Action</a></li>
                               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -120,19 +143,52 @@
                   </li>
                 </ul>
               </li> -->
-              <li class="nav-item"><a class="nav-link" href="#">MERL Fellowship</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'news' %}">Newsroom</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Work with us </a></li>
-              <!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
-            </ul>
-            <!-- <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">MERL Fellowship</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'news' %}">Newsroom</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Work with us </a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
+          </ul>
+          <!-- <ul class="navbar-nav ml-auto">
               <li class="nav-item active"><a class="nav-link" href="#"><i class="icon-bubble"></i> Need help?</a></li>
               <li class="nav-item active"><a class="nav-link" href="#">Login</a></li>
               <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" href="#">Sign up</a></li>
             </ul> -->
-          </div>
         </div>
-      </nav>
-      <!-- End Header 1 code -->
-    </div>
+      </div>
+    </nav>
+    
+    <!-- End Header 1 code -->
   </div>
+</div>
+
+
+<!--  -->
+
+<script >function burger(){
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  var quit = document.getElementById('quit');
+  burger.style.padding = '16px 16px 200vw 200vw';
+  quit.style.display = 'inline';
+  links.classList.add("mob_display");
+}
+
+function quit(){
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  var quit = document.getElementById('quit');
+  burger.style.padding = '16px 16px 32px 32px';
+  quit.style.display = 'none';
+  links.classList.remove("mob_display")
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>

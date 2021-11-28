@@ -1,5 +1,7 @@
 .header2 .dropdown-item {
   padding: 8px 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header2 .h2-nav .navbar-nav .nav-item .nav-link {

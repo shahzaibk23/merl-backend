@@ -6,14 +6,13 @@
 <section class="clean-block">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bss-parallax-bg="true" style="background-image: url('{% static 'img/bg.jpg' %}');background-position: center;background-size: cover;height: 100vh;">
+            <div class="carousel-item active" data-bss-parallax-bg="true" style="background-image: url('{% static 'img/bg.jpg' %}');background-position: center;background-size: 100%;height: 100vh;">
                 <div class="container">
-                    <div class="row" style="padding-top: 30vh;">
+                    <div class="row hero-row" style="padding-top: 30vh;">
                         <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
                             <h1 style="font-size: 60px;">Welcome To</h1>
                             <h1>MERL</h1>
-                            <h4 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Fostering Semiconductor Technology</h4>
-                            <h4 style="text-shadow: 2px 2px 10px rgb(0 0 0);">IC Design, Research and Development</h4>
+                            <h4 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Fostering Semiconductor Technology, IC Design, Research and Development</h4>
                         </div>
                         <div class="col"></div>
                     </div>
@@ -21,10 +20,10 @@
             </div>
             <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg2.jpg' %}');background-position: center;background-size: cover;">
                 <div class="container">
-                    <div class="row" style="padding-top: 60vh;">
-                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                    <div class="row hero-row2" style="padding-top: 60vh;">
+                        <div class="col-md-6 left-col2" style="color: rgb(255,255,255);">
                             <h2 style="font-size: 40px;text-shadow: 2px 2px 10px rgb(0 0 0);"><br>For the First Time in Pakistan&nbsp;<br></h2>
-                            <h2 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Adapting Semiconductor Revolution</h2>
+                            <h3 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Adapting Semiconductor Revolution</h2>
                             <h2 style="text-shadow: 2px 2px 10px rgb(0 0 0);"></h2>
                         </div>
                         <div class="col"></div>
@@ -34,7 +33,7 @@
             <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg3.png' %}');background-position: center;background-size: cover;">
                 <div class="container">
                     <div class="row" style="padding-top: 30vh;">
-                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                        <div class="col-md-6 left-col3" style="color: rgb(255,255,255);">
                             <h1 style="font-size: 50px;">Industry x Academia</h1>
                             <h3 style="text-shadow: 2px 2px 10px rgb(0 0 0);">Developing Semiconductor Ecosystem in Academic Sector</h3>
                         </div>
@@ -45,7 +44,7 @@
             <div class="carousel-item" style="height: 100vh;background-image: url('{% static 'img/bg4.jpg' %}');background-position: center;background-size: cover;">
                 <div class="container">
                     <div class="row" style="padding-top: 30vh;">
-                        <div class="col-md-6 left-col" style="color: rgb(255,255,255);">
+                        <div class="col-md-6 left-col4" style="color: rgb(255,255,255);">
                             <h1 style="font-size: 40px;">International Collaborations</h1>
                             <h3 style="text-shadow: 2px 2px 10px rgb(0 0 0);">The Organizations and Industries we have collaborated with</h3>
                         </div>
@@ -69,25 +68,25 @@
                 <div>
                     <h6>Designing</h6>
                     <h5>System-on-Chip</h5>
-                </div><img src="{% static 'img/chip_icon.png' %}" style="width: 90px;">
+                </div><img src="{% static 'img/chip_icon.png' %}" id="at1" style="width: 90px;">
             </div>
             <div class="col-md-3 d-flex align-items-center justify-content-evenly">
                 <div>
                     <h6>Developing</h6>
                     <h5>Tools and Simulators</h5>
-                </div><img src="{% static 'img/tools.png' %}" style="width: 50px;">
+                </div><img src="{% static 'img/tools.png' %}" id="at2" style="width: 50px;">
             </div>
             <div class="col-md-3 d-flex align-items-center justify-content-evenly">
                 <div>
                     <h6>Engineering</h6>
                     <h5>Verification Aspects</h5>
-                </div><img src="{% static 'img/verification.png' %}" style="width: 70px;">
+                </div><img src="{% static 'img/verification.png' %}" id="at3" style="width: 70px;">
             </div>
             <div class="col-md-3 d-flex align-items-center justify-content-evenly">
                 <div>
                     <h6>Researching</h6>
                     <h5>RISC-V</h5>
-                </div><img src="{%static 'img/rv.png' %}" style="width: 200px;">
+                </div><img src="{%static 'img/rv.png' %}" id="at4" style="width: 200px;">
             </div>
         </div>
     </section>
@@ -98,7 +97,7 @@
                 <p class="d-inline-block" style="width: 50%;">Atributes that enabled MERL to achieve such enormous progress.<br>&nbsp; &nbsp;&nbsp;</p>
             </div>
             <div class="row">
-                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="text-center icon-box">
                         <div class="icon"><i class="fas fa-globe" style="margin-bottom: 15px;"></i>
                             <h4 class="title">Development of Ecosystem<a href="#"></a></h4>
@@ -106,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="text-center icon-box">
                         <div class="icon"><i class="fas fa-microchip" style="margin-bottom: 15px;"></i>
                             <h4 class="title">State-of-the-art Technology<a href="#"></a></h4>
@@ -114,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="text-center icon-box">
                         <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
                             <h4 class="title">Thinking Out of the Box<a href="#"></a></h4>
@@ -122,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="text-center icon-box">
                         <div class="icon"><i class="fas fa-laptop-code" style="margin-bottom: 15px;"></i>
                             <h4 class="title">Peer to Peer Learning Methodology<a href="#"></a></h4>
@@ -146,7 +145,7 @@
             <div class="carousel-inner" role="listbox">
                 
                 <!-- <div class="carousel-item active">
-                    <img src="{{ projects.0.0.project.thumbnail.url }}" style="width: 26%;" alt="w_shop_105_01">
+                    <img src="{{ projects.0.0.project.thumbnail.url }}" style="width: 26%;" class="c_img" alt="w_shop_105_01">
                     <div class="w_shop_105_left_box">
                         <span data-animation="animated fadeInLeft" style="font-family: roboto;">{{projects.0.0.project.category.name}}</span>
                         <h1 class="left-h" data-animation="animated fadeInLeft">{{ projects.0.0.title }}</h1>
@@ -170,7 +169,7 @@
                     
                 </div> -->
                 
-                <div class="carousel-item active"><img src="{{ projects.1.0.project.thumbnail.url }}" style="width: 26%;" alt="w_shop_105_02">
+                <div class="carousel-item active"><img src="{{ projects.1.0.project.thumbnail.url }}" class="c_img" style="width: 26%;" alt="w_shop_105_02">
                     <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;">{{projects.1.0.project.category.name}}</span>
                         <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.1.0.title}}</h1>
                         <p data-animation="animated fadeInLeft">{{projects.1.0.description}}</p>
@@ -191,7 +190,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="carousel-item"><img src="{{ projects.2.0.project.thumbnail.url }}" style="width: 26%;" alt="w_shop_105_02">
+                <div class="carousel-item"><img src="{{ projects.2.0.project.thumbnail.url }}" class="c_img" style="width: 26%;" alt="w_shop_105_02">
                     <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;text-align: justify;">{{projects.2.0.project.category.name}}</span>
                         <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.2.0.title}}</h1>
                         <p data-animation="animated fadeInLeft">{{projects.2.0.description}}</p>
@@ -242,8 +241,8 @@
             </div>
         </div>
     </section>
-    <section style="/*background: linear-gradient(to bottom, #2d91c2 0%,#1e528e 100%);*/padding-top: 100px;">
-        <div data-bss-parallax-bg="true" style="  background-image: url('{% static 'img/tech.jpg' %}'); background-position: center;background-size: cover;padding-top: 100px;">
+    <section style="/*background: linear-gradient(to bottom, #2d91c2 0%,#1e528e 100%);padding-top: 100px;*/">
+        <div data-bss-parallax-bg="true" style="  background-image: url('{% static 'img/tech.jpg' %}'); background-position: center;background-size: cover;padding-top: 10vh;">
             <div class="container">
                 <h1 style="color: rgb(255,255,255);text-align: center;">Testimonials</h1>
             </div><style>
