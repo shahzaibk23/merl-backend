@@ -3,7 +3,7 @@ from .utils import nav_data
 from project.models import project_teams
 from news.models import news
 from testimonials.models import testimonials
-
+from .models import collabs
 # Create your views here.
 
 def home_page(request):
@@ -13,13 +13,15 @@ def home_page(request):
     news_objs = news.objects.all()
     tests = testimonials.objects.all()
     projects = []
+    collab = collabs.objects.all()
     for i in range(len(team_proj)):
         projects.append((projectss[i], team_proj[i], mentors[i]))
     context = {
         "projects":projects,
         "news":news_objs[::-1][:2],
         "tests":tests[::-1],
-        "nav":nav_data()
+        "nav":nav_data(),
+        "c":collab
         }
     return render(request, "index.html",context )
 

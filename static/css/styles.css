@@ -182,7 +182,7 @@ body > * {
     background: linear-gradient( 66deg, rgb(13,75,106) 31%, rgb(0,20,30) 100%);
   }
   #at4{
-    width: 200px !important;
+    width: 163px !important;
   }
   #at3{
     width: 70px !important;
@@ -396,4 +396,9 @@ title{
 .mob_display .nav-link{
   color: white !important;
   font-size: 20px !important;
+}
+
+
+.colab_img{
+  height: 40px;margin-top: 50px;margin-left: 20px;
 }

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'trainings',
     'talks',
     'news',
-    'testimonials'
+    'testimonials',
+    'pages'
 ]
 
 MIDDLEWARE = [
