@@ -18,9 +18,14 @@
 <div class="recipe-card">
     <div id="recipe-card__cover{{obj.3}}" class="recipe-card__cover">
       <div class="recipe-card__img">
+
         <img
+        {% if obj.0.thumbnail %}
+        src = "{{ obj.0.thumbnail.url }}"
+        {% else %}
           src="{% static 'img/project.jpg' %}"
-          alt="Blueberry French Toast">
+        {% endif %}
+          alt="{{ obj.0.title }}">
       </div>
       <div class="recipe-card__cover-details">
         <div id="recipe-card__duration{{obj.3}}" class="recipe-card__duration">

@@ -32,6 +32,7 @@ class project_teams(models.Model):
     teamMembers = models.ManyToManyField(employee)
     mentors = models.ManyToManyField(mentors)
     project = models.OneToOneField(project, blank=True, null=True, on_delete=models.CASCADE)
+    thumbnail = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title
