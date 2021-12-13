@@ -18,7 +18,7 @@ def home_page(request):
         projects.append((projectss[i], team_proj[i], mentors[i]))
     context = {
         "projects":projects,
-        "news":news_objs[::-1][:2],
+        "news":news_objs[::-1][:3],
         "tests":tests[::-1],
         "nav":nav_data(),
         "c":collab
