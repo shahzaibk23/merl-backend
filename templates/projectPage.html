@@ -4,7 +4,7 @@
 
 {% block content %}
 <section>
-        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)),{% if obj.cover %} url('{{obj.cover.url}}') {% else %} url('{% static 'img/project3.jpg' %}') {% endif %} center / cover;height: 100vh;">
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)),{% if obj.thumbnail %} url('{{obj.thumbnail.url}}') {% else %} url('{% static 'img/project3.jpg' %}') {% endif %} center / cover;height: 100vh;">
             <div class="container" style="padding-top: 40vh;text-align: center;">
                 <h1 style="color: rgb(255,255,255);font-size: 50px;">{{obj.title}}</h1>
             </div>
@@ -21,11 +21,11 @@
                 <br />
                
                 
-                {% if obj.image1 %}
+                <!-- {% if obj.image1 %}
                 <br />
                 <br />
                     <img src="{{obj.image1.url}}" style="width: 100%;" />
-                {% endif %}
+                {% endif %} -->
                 {% if obj.image2 %}
                 <br />
                 <br />
