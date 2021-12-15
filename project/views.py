@@ -26,10 +26,11 @@ def project_page(request, proj_id):
     return render(request, "projectPage.html", context)
 
 def research_page(request, res_id):
-    obj = category.objects.get(id=res_id)
+    obj = category.objects.get(id=res_id) 
     objs = [a for a in project.objects.all() if a.category.name == obj.name ]
+    print(objs)
     context = {
-        "obj":objs,
+        "objs":objs,
         "nav":nav_data()
     }
     return render(request, "categories.html", context)
