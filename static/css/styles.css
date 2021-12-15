@@ -325,7 +325,7 @@ title{
 
 
 
-
+.navmenu-nav.dropdown-menu, .dropdown-backdrop {position:relative!important;}
 
 /* MOBILE NAVV */
 
@@ -342,6 +342,13 @@ title{
   transition: 1s;
   cursor: pointer;
 }
+
+/* .icon-arrow-right{
+  display: none;
+} */
+/* .navbar-nav {
+  overflow-y: scroll;
+} */
 
 #quit{
   position: absolute;
@@ -381,6 +388,12 @@ title{
   .mob_nav{
     display: block !important;
   }
+  .mob-drop{
+    display: block !important;
+  }
+  .desktop-drop{
+    display: none !important;
+  }
   #links{
     display: none;
   }
@@ -401,4 +414,11 @@ title{
 
 .colab_img{
   height: 40px;margin-top: 50px;margin-left: 20px;
+}
+
+/* .ghyb-on li{
+  list-style-type: none;
+} */
+.mob-drop{
+  display: none;
 }

@@ -10,6 +10,9 @@ class category(models.Model):
     def __str__(self):
         return self.name
 
+    def getURL(self):
+        return reverse("research", kwargs={"res_id":self.id})
+
 class project(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey(category, null=True, blank=True, on_delete=models.CASCADE)

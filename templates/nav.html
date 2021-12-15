@@ -44,7 +44,7 @@
 
               </ul>
             </li>
-            <li class="nav-item dropdown position-relative">
+            <li class="desktop-drop nav-item dropdown position-relative">
               <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 Research & Development <i class="icon-arrow-down ml-1 font-12"></i>
@@ -61,6 +61,8 @@
                   </ul>
                 </li>
                 {% endfor %}
+              </ul>
+
                 <!-- <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">VERILOG.based(SoC) <i class="icon-arrow-right float-right mt-1"></i></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Ghazi (غازی)</a></li>
@@ -86,7 +88,19 @@
                       <li><a class="dropdown-item" href="#">Oxygen Simulator</a></li>
                     </ul>
                   </li> -->
-              </ul>
+              
+            </li>
+            <li class="mob-drop nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Research & Development <i class="icon-arrow-down ml-1 font-12"></i>
+              </a>
+              <ul class="dropdown-menu">
+                {% for cat in nav.0 %}
+                <li> <a class="dropdown-item" href="{{ cat.0.getURL }}">{{cat.0.name}}</a>
+                </li>
+                {% endfor %}
+              </ul>              
             </li>
             <li class="nav-item dropdown position-relative">
               <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -94,8 +108,6 @@
                 Trainings <i class="icon-arrow-down ml-1 font-12"></i>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">RISC-V ISA</a></li>
-                <li><a class="dropdown-item" href="#">RTL Modeling</a></li>
                 {% for trainCat in nav.1 %}
                 <li class="dropdown-submenu position-relative">
                   <a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="#">{{ trainCat.0.name }} <i
@@ -164,19 +176,39 @@
 
 <!--  -->
 
-<script >function burger(){
+<script >
+function burger(){
   var burger = document.getElementById('burger');
   var links = document.getElementById('links');
   var quit = document.getElementById('quit');
+  // var ghybs = document.getElementsByClassName('ghyb-mode');
+  // var ghyb_parents = document.getElementsByClassName("ghyb-parent_mode");
+  // for(let i = 0; i<ghybs.length; i++){
+  //   ghybs[i].classList.remove("dropdown-menu");
+  //   ghybs[i].classList.add("ghyb-on");
+  // }
+  // for(let j = 0; j<ghyb_parents; j++){
+  //   ghyb_parents[j].classList.remove("dropdown-submenu")
+  // }
   burger.style.padding = '16px 16px 200vw 200vw';
   quit.style.display = 'inline';
   links.classList.add("mob_display");
+  console.log(ghyb_parents)
 }
 
 function quit(){
   var burger = document.getElementById('burger');
   var links = document.getElementById('links');
   var quit = document.getElementById('quit');
+  // var ghybs = document.getElementsByClassName('ghyb_mode');
+  // var ghyb_parents = document.getElementsByClassName("ghyb-parent_mode");
+  // for(let i = 0; i<ghybs.length; i++){
+  //   ghybs[i].classList.add("dropdown-menu");
+  //   ghybs[i].classList.remove("ghyb-on");
+  // }
+  // for(let j = 0; j<ghyb_parents; j++){
+  //   ghyb_parents[j].classList.add("dropdown-submenu")
+  // }
   burger.style.padding = '16px 16px 32px 32px';
   quit.style.display = 'none';
   links.classList.remove("mob_display")
