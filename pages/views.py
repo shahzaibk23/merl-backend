@@ -17,8 +17,8 @@ def home_page(request):
     for i in range(len(team_proj)):
         projects.append((projectss[i], team_proj[i], mentors[i]))
     context = {
-        "projects":projects,
-        "news":news_objs[::-1][:3],
+        "projects":projects[::-1],
+        "news":news_objs,
         "tests":tests[::-1],
         "nav":nav_data(),
         "c":collab
