@@ -102,7 +102,7 @@
                 {% endfor %}
               </ul>              
             </li>
-            <li class="nav-item dropdown position-relative">
+            <li class="desktop-drop nav-item dropdown position-relative">
               <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 Trainings <i class="icon-arrow-down ml-1 font-12"></i>
@@ -118,6 +118,19 @@
                     {% endfor %}
                   </ul>
                 </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="mob-drop nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Trainings <i class="icon-arrow-down ml-1 font-12"></i>
+              </a>
+              <ul class="dropdown-menu">
+                {% for trainCat in nav.1 %}
+                    {% for train in trainCat.1 %}
+                    <li><a class="dropdown-item" href="{{train.getURL}}">{{train.name}}</a></li>
+                    {% endfor %}
                 {% endfor %}
               </ul>
             </li>
