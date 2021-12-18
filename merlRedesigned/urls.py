@@ -24,7 +24,8 @@ urlpatterns = [
     path("training/<int:train_id>", training_page, name="training"),
     path("team/<int:emp_id>", emp_details_page, name="team"),
     path("project/<int:proj_id>", project_page, name="project"),
-    path("researches/<int:res_id>", research_page, name="research")
+    path("researches/<int:res_id>", research_page, name="research"),
+    path("fellowship", under_dev_page, name="fellowship")
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT )

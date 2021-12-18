@@ -48,3 +48,7 @@ def careers_page(request):
         "nav":nav_data()})
 
 
+def under_dev_page(request):
+    return render(request, "underDev.html", {
+        "nav":nav_data()
+    })
