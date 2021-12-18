@@ -178,7 +178,7 @@
                 
                 <div class="carousel-item"><img src="{{ projects.1.0.project.image1.url }}" class="c_img" style="width: 26%;" alt="w_shop_105_02">
                     <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;"><a style="text-decoration: none;" href="{{projects.1.0.project.category.getURL}}">{{projects.1.0.project.category.name}}</a></span>
-                        <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.1.0.title}}</h1>
+                        <h1 class="left-h" data-animation="animated fadeInLeft"><a style="text-decoration: none; color:#2e2e2e;" href="{{projects.1.0.getURL}}">{{projects.1.0.title}}</a></h1>
                         <p data-animation="animated fadeInLeft">{{projects.1.0.description}}</p>
                         <a href="{{projects.1.0.getURL}}" data-animation="animated fadeInLeft">Show Details</a>
                     </div>
@@ -186,7 +186,7 @@
                         <h5 data-animation="animated fadeInRight"> Team Members </h5>
                         <ul>
                             {% for team in projects.1.1 %}
-                            <li data-animation="animated fadeInRight">{{team.name}}</li>
+                            <li data-animation="animated fadeInRight"><a style="text-decoration: none;color: #2e2e2e;" href="{{team.get_details}}">{{team.name}}</a></li>
                             {% endfor %}
                         </ul>
                         <h5 data-animation="animated fadeInRight"> Mentors </h5>
@@ -199,7 +199,7 @@
                 </div>
                 <div class="carousel-item"><img src="{{ projects.2.0.project.image1.url }}" class="c_img" style="width: 26%;" alt="w_shop_105_02">
                     <div class="w_shop_105_left_box"><span data-animation="animated fadeInLeft" style="font-family: roboto;text-align: justify;"><a style="text-decoration: none;" href="{{projects.2.0.project.category.getURL}}">{{projects.2.0.project.category.name}}</a></span>
-                        <h1 class="left-h" data-animation="animated fadeInLeft">{{projects.2.0.title}}</h1>
+                        <h1 class="left-h" data-animation="animated fadeInLeft"><a style="text-decoration: none; color:#2e2e2e;" href="{{projects.0.0.getURL}}">{{projects.2.0.title}}</a></h1>
                         <p data-animation="animated fadeInLeft">{{projects.2.0.description}}</p>
                         <a href="{{projects.2.0.getURL}}" data-animation="animated fadeInLeft">Show Details</a>
                     </div>
@@ -207,7 +207,7 @@
                         <h5 data-animation="animated fadeInRight"> Team Members </h5>
                         <ul>
                             {% for team in projects.2.1 %}
-                            <li data-animation="animated fadeInRight">{{team.name}}</li>
+                            <li data-animation="animated fadeInRight"><a style="text-decoration: none;color: #2e2e2e;" href="{{team.get_details}}">{{team.name}}</a></li>
                             {% endfor %}
                         </ul>
                         <h5 data-animation="animated fadeInRight"> Mentors </h5>
