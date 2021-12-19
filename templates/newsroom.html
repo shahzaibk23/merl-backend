@@ -15,10 +15,10 @@
         <div class="container">
             {% for news in objs %}
             <div id="{{ news.id }}" data-bss-hover-animate="pulse" class="row clearmargin clearpadding row-image-txt" style="border-color: rgba(128, 128, 128, 0.205); border-width: 0.01px;border-style: solid;box-shadow: 5px 4px 5px rgba(33,37,41,0.3);margin-bottom: 50px;">
-                <div class="col-xs-8 col-sm-4 col-md-4 clearmargin clearpadding col-sm-push-6" style="background: url('{% if news.cover %} {{ news.cover.url }} {% else %} {% static 'img/about5.jpg' %} {% endif %}') center / contain no-repeat;">
+                <div class="col-md-4 clearmargin clearpadding col-sm-push-6" style="background: url('{% if news.cover %} {{ news.cover.url }} {% else %} {% static 'img/about5.jpg' %} {% endif %}') center / contain no-repeat; height:400px;">
                     <div></div>
                 </div>
-                <div class="col-xs-16 col-sm-8 col-md-8 col-sm-pull-6" style="color: black;padding: 20px;">
+                <div class="col-md-8 col-sm-pull-6" style="color: black;padding: 20px;">
                     <h1>{{news.title}}</h1>
                     <hr>
                     <p style="text-align: justify;">{{news.content|safe}}</p>
