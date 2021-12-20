@@ -6,9 +6,17 @@ from pages.utils import nav_data
 def team_page(request):
     objs = mentors.objects.all()
     objs2 = employee.objects.all()
+    researchAssociates = [obj for obj in objs2 if "Research Associate" in obj.title]
+    physicalDesignEngrs = [obj for obj in objs2 if "Physical Design Engineer" in obj.title]
+    researchAssistants = [obj for obj in objs2 if "Research Assistant" in obj.title and "Graduate" not in obj.title]
+    graduateResearchAssistants = [obj for obj in objs2 if "Graduate Research Assistant" in obj.title]
+    researchInterns = [obj for obj in objs2 if "Research Intern" in obj.title]
+    interns = [obj for obj in objs2 if "Intern" in obj.title and "Research" not in obj.title]
+    employees = researchAssociates + physicalDesignEngrs + researchAssistants + graduateResearchAssistants + researchInterns + interns
+
     context = {
         "mentors":objs,
-        "employees":objs2,
+        "employees":employees,
         "nav":nav_data()
     }
     return render(request, "team.html", context)
