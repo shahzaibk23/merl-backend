@@ -67,19 +67,19 @@
 </section>
     <section class="clean-block attr-section">
         <div class="row">
-            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=4 %}">
+            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=6 %}" >
                 <div>
                     <h6>Designing</h6>
                     <h5>System-on-Chip</h5>
                 </div><img src="{% static 'img/chip_icon.png' %}" id="at1" style="width: 90px;">
             </a>
-            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=6 %}">
+            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=1 %}" >
                 <div>
                     <h6>Developing</h6>
                     <h5>Tools and Simulators</h5>
                 </div><img src="{% static 'img/tools.png' %}" id="at2" style="width: 50px;">
             </a>
-            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=1 %}">
+            <a style="text-decoration: none;" class="col-md-3 d-flex align-items-center justify-content-evenly" href="{% url 'research' res_id=4 %}" >
                 <div>
                     <h6>Engineering</h6>
                     <h5>Verification Aspects</h5>
@@ -97,48 +97,34 @@
         </a>
         </div>
     </section>
-    <section id="services" class="services" style="padding-bottom: 100px;">
-        <div class="container-md section-title" style="padding-top: 100px;">
-            <div class="text-center">
-                <h2 style="color: #34a4dc;">MERL is based on <span style="color: #3466ac;"><strong>&nbsp;four pillars</strong></span>.</h2>
-                <p class="d-inline-block" style="width: 50%;">Atributes that enabled MERL to achieve such enormous progress.<br>&nbsp; &nbsp;&nbsp;</p>
-            </div>
-            <div class="row">
-                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box">
-                        <div class="icon"><i class="fas fa-globe" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Development of Ecosystem<a href="#"></a></h4>
-                            <p class="description" style="text-align: justify;">MERL is working towards development of such an ecosystem where students can evolve and become the best version of theirselves.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
-                        </div>
+    <section style="padding-top: 100px;padding-bottom: 100px;">
+        <div class="container">
+            <h1 style="padding-bottom: 25px; text-align: center;">Latest News</h1>
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    {% for new in news %}
+                    <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% if new.cover %} {{ new.cover.url }} {% else %} {% static 'blog-1.jpg' %} {% endif %}" style="width: 100%;"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">{{new.date}}</span><div class="blog-slider__title">{{new.title}}</div><div style="height: 100px;overflow:hidden;" class="blog-slider__text">{{new.content|safe}} </div><a class="class=&quot;blog-slider__button" href="{{new.getURL}}">READ MORE</a></div>
                     </div>
-                </div>
-                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box">
-                        <div class="icon"><i class="fas fa-microchip" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">State-of-the-art Technology<a href="#"></a></h4>
-                            <p class="description" style="text-align: justify;">MERL ecosystem provides students with an opportunity to work with the state of the art technologies.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
-                        </div>
+                    {% endfor %}
+                    <!-- <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% static 'blog-2.jpg' %}"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
                     </div>
-                </div>
-                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box">
-                        <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Thinking Out of the Box<a href="#"></a></h4>
-                            <p class="description" style="text-align: justify;">MERL ecosystem enables individuals to push further than one's limit and step out of one's comfort zone.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box">
-                        <div class="icon"><i class="fas fa-laptop-code" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Peer to Peer Learning Methodology<a href="#"></a></h4>
-                            <p class="description" style="text-align: justify;">MERL ecosystem allows students to bring out their inner teacher-self and forward their skills to other fellow students.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
-                        </div>
-                    </div>
+                    <div class="blog-slider__item swiper-slide">
+                        <div></div>
+                        <div class="blog-slider__img"><img src="{% static 'blog-3.jpg' %}"></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
+                    </div> -->
+                    <div class="blog-slider__pagination"></div>
                 </div>
             </div>
         </div>
     </section>
+    
     <section>
         <div id="w_shop_105" class="carousel slide w_shop_105_indicators w_shop_105_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-duration="2000" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="8000">
             <div class="w_shop_105_main_header">
@@ -221,33 +207,7 @@
             </div>
         </div>
     </section>
-    <section style="padding-top: 100px;padding-bottom: 100px;">
-        <div class="container">
-            <h1 style="padding-bottom: 25px;">Latest News</h1>
-            <div class="blog-slider">
-                <div class="blog-slider__wrp swiper-wrapper">
-                    {% for new in news %}
-                    <div class="blog-slider__item swiper-slide">
-                        <div></div>
-                        <div class="blog-slider__img"><img src="{% if new.cover %} {{ new.cover.url }} {% else %} {% static 'blog-1.jpg' %} {% endif %}" style="width: 100%;"></div>
-                        <div class="blog-slider__content"><span class="blog-slider__code">{{new.date}}</span><div class="blog-slider__title">{{new.title}}</div><div style="height: 100px;overflow:hidden;" class="blog-slider__text">{{new.content|safe}} </div><a class="class=&quot;blog-slider__button" href="{{new.getURL}}">READ MORE</a></div>
-                    </div>
-                    {% endfor %}
-                    <!-- <div class="blog-slider__item swiper-slide">
-                        <div></div>
-                        <div class="blog-slider__img"><img src="{% static 'blog-2.jpg' %}"></div>
-                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
-                    </div>
-                    <div class="blog-slider__item swiper-slide">
-                        <div></div>
-                        <div class="blog-slider__img"><img src="{% static 'blog-3.jpg' %}"></div>
-                        <div class="blog-slider__content"><span class="blog-slider__code">26 December 2019</span><div class="blog-slider__title">Lorem Ipsum Dolor</div><div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div><a class="class=&quot;blog-slider__button" href="#">READ MORE</a></div>
-                    </div> -->
-                    <div class="blog-slider__pagination"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <section style="/*background: linear-gradient(to bottom, #2d91c2 0%,#1e528e 100%);padding-top: 100px;*/">
         <div data-bss-parallax-bg="true" style="  background-image: url('{% static 'img/tech.jpg' %}'); background-position: center;background-size: cover;padding-top: 10vh;">
             <div class="container">
@@ -375,6 +335,49 @@ $('.no-fouc').removeClass('no-fouc');
 });
 
   </script>
+        </div>
+    </section>
+
+    <section id="services" class="services" style="padding-bottom: 100px;">
+        <div class="container-md section-title" style="padding-top: 100px;">
+            <div class="text-center">
+                <h2 style="color: #34a4dc;">MERL is based on <span style="color: #3466ac;"><strong>&nbsp;four pillars</strong></span>.</h2>
+                <p class="d-inline-block" style="width: 50%;">Atributes that enabled MERL to achieve such enormous progress.<br>&nbsp; &nbsp;&nbsp;</p>
+            </div>
+            <div class="row">
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-globe" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Development of Ecosystem<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL is working towards development of such an ecosystem where students can evolve and become the best version of theirselves.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-microchip" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">State-of-the-art Technology<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem provides students with an opportunity to work with the state of the art technologies.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Thinking Out of the Box<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem enables individuals to push further than one's limit and step out of one's comfort zone.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="text-center icon-box">
+                        <div class="icon"><i class="fas fa-laptop-code" style="margin-bottom: 15px;"></i>
+                            <h4 class="title">Peer to Peer Learning Methodology<a href="#"></a></h4>
+                            <p class="description" style="text-align: justify;">MERL ecosystem allows students to bring out their inner teacher-self and forward their skills to other fellow students.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section style="padding-top: 100px;padding-bottom: 40px;">
