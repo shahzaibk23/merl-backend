@@ -5,7 +5,7 @@
 {% block content %}
 
 <section>
-        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(136,136,136,0.2)), url('{% static 'img/about2.jpg' %}') center / cover;height: 100vh;">
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(136,136,136,0.2)), url('{% static 'img/newspaper2.jpg' %}') center / cover;height: 100vh;">
             <div class="container" style="padding-top: 40vh;text-align: center;">
                 <h1 style="color: rgb(255,255,255);font-size: 50px;">Newsroom</h1>
             </div>
@@ -15,8 +15,8 @@
         <div class="container">
             {% for news in objs %}
             <div id="{{ news.id }}" data-bss-hover-animate="pulse" class="row clearmargin clearpadding row-image-txt" style="border-color: rgba(128, 128, 128, 0.205); border-width: 0.01px;border-style: solid;box-shadow: 5px 4px 5px rgba(33,37,41,0.3);margin-bottom: 50px;">
-                <div class="col-md-4 clearmargin clearpadding col-sm-push-6" style="background: url('{% if news.cover %} {{ news.cover.url }} {% else %} {% static 'img/about5.jpg' %} {% endif %}') center / contain no-repeat; height:400px;">
-                    <div></div>
+                <div class="col-md-4 clearmargin clearpadding col-sm-push-6">
+                    <img src="{% if news.cover %} {{ news.cover.url }} {% else %} {% static 'img/about5.jpg' %} {% endif %}"  style="width:100%"/>
                 </div>
                 <div class="col-md-8 col-sm-pull-6" style="color: black;padding: 20px;">
                     <h1>{{news.title}}</h1>
