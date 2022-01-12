@@ -1,0 +1,1 @@
+from merlRedesigned.wsgi import application
