@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)), url('{% static 'img/project3.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">Our Projects</h1>
+            </div>
+        </div>
+    </section>
+    <section style="padding-top: 100px;padding-bottom: 50px;">
+
+      {% for obj in lst %}
+
+<section class="clean-block project-card-section">
+<div class="recipe-card">
+    <div id="recipe-card__cover{{obj.3}}" class="recipe-card__cover">
+      <div class="recipe-card__img">
+
+        <img
+        {% if obj.0.thumbnail %}
+        src = "{{ obj.0.thumbnail.url }}"
+        {% else %}
+          src="{% static 'img/project.jpg' %}"
+        {% endif %}
+          alt="{{ obj.0.title }}">
+      </div>
+      <div class="recipe-card__cover-details">
+        <div id="recipe-card__duration{{obj.3}}" class="recipe-card__duration">
+          <p><span>{{obj.2|length}}</span>team members</p>
+        </div>
+        <div id="recipe-card__servings{{obj.3}}" class="recipe-card__servings">
+          <p><span>{{obj.1|length}}</span>Mentor</p>
+        </div>
+        <div id="recipe-card__info{{obj.3}}" class="recipe-card__info">
+          <div class="recipe-card__title">
+            <h1>{{ obj.0.title }}</h1>
+          </div>
+          <div class="recipe-card__description">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div id="recipe-card__content-container{{obj.3}}" class="recipe-card__content-container">
+      <div class="recipe-card__actions">
+        <ul>
+          <li><a id="ingredientsTab{{obj.3}}" href="#" class="active">Description</a></li>
+          <li><a id="preparationsTab{{obj.3}}" href="#">Team</a></li>
+        </ul>
+      </div>
+      <div id="recipe-card__content--ingredients{{obj.3}}" class="recipe-card__content recipe-card__content--active">
+        <ul>
+          <span>Description:</span>
+          <li> {{ obj.0.description }} </li>
+        </ul>
+        <ul>
+          <span>MENTOR:</span>
+          {% for mentor in obj.1 %}
+          <li>{{ mentor.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div id="recipe-card__content--preparations{{obj.3}}" class="recipe-card__content">
+        <ul class="preparation-steps">
+          {% for team in obj.2 %}
+          <li><a href="{{team.get_details}}" style="text-decoration: none; color: black;">{{ team.name }}</a></li>
+          {% endfor %}
+          {% if obj.0.extra_members %}
+            {% for extra in obj.0.extra_members %}
+              <li>{{ extra }}</li>
+            {% endfor %}
+          {% endif %}
+
+    
+
+<script>
+    const recipeCardCover{{obj.3}} = document.getElementById('recipe-card__cover{{obj.3}}');
+const recipeCardInfo{{obj.3}} = document.getElementById('recipe-card__info{{obj.3}}');
+const recipeCardDuration{{obj.3}} = document.getElementById('recipe-card__duration{{obj.3}}');
+const recipeCardServings{{obj.3}} = document.getElementById('recipe-card__servings{{obj.3}}');
+const recipeCardContentContainer{{obj.3}} = document.getElementById('recipe-card__content-container{{obj.3}}');
+const ingredientsTab{{obj.3}} = document.getElementById('ingredientsTab{{obj.3}}');
+const preparationsTab{{obj.3}} = document.getElementById('preparationsTab{{obj.3}}');
+const ingredientsContent{{obj.3}} = document.getElementById('recipe-card__content--ingredients{{obj.3}}');
+const preparationsContent{{obj.3}} = document.getElementById('recipe-card__content--preparations{{obj.3}}');
+
+recipeCardCover{{obj.3}}.addEventListener('click', () => {
+  recipeCardCover{{obj.3}}.classList.toggle('recipe-card__cover--open');
+  recipeCardContentContainer{{obj.3}}.classList.toggle('recipe-card__content-container--open')
+  recipeCardInfo{{obj.3}}.classList.toggle('recipe-card__info--show');
+  recipeCardDuration{{obj.3}}.classList.toggle('recipe-card__duration--show');
+  recipeCardServings{{obj.3}}.classList.toggle('recipe-card__servings--show');
+})
+
+ingredientsTab{{obj.3}}.addEventListener('click', (e) => {
+  e.preventDefault();
+  ingredientsTab{{obj.3}}.classList.add('active');
+  preparationsTab{{obj.3}}.classList.remove('active');
+  ingredientsContent{{obj.3}}.classList.add('recipe-card__content--active');
+  preparationsContent{{obj.3}}.classList.remove('recipe-card__content--active');
+})
+
+preparationsTab{{obj.3}}.addEventListener('click', (e) => {
+  e.preventDefault();
+  ingredientsTab{{obj.3}}.classList.remove('active');
+  preparationsTab{{obj.3}}.classList.add('active');
+  ingredientsContent{{obj.3}}.classList.remove('recipe-card__content--active');
+  preparationsContent{{obj.3}}.classList.add('recipe-card__content--active');
+})
+</script>
+</ul>
+</div>
+</div>
+</section>
+{% endfor %}
+
+</section>
+{% endblock %}

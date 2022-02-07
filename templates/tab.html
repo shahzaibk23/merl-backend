@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('{% static 'img/tab.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">Technical Advisory Board - TAB</h1>
+            </div>
+        </div>
+    </section>
+    <section class="normal-section">
+        <div class="container">
+        {% for obj in objs %}
+        <div class="d-md-flex align-items-center">
+            <img class="teamprofilepictures" src="{% static 'img/black-colour-business-man-icon-260nw-139009392522.jpg' %}">
+            <div style="text-align: left;padding-left: 50px;">
+                <h1 class="teamprofilenames">{{ obj.name }}</h1>
+                <h1 class="teamprofileprofessions">{{ obj.title }}</h1>
+                <p class="teamprofiledescription">{{ obj.description }}</p>
+                <a href="{{ obj.linkedin }}" style="color: black;"><i class="fab fa-linkedin-in teamprofileicons"></i></a>
+            </div>
+        </div>
+        <hr />
+        {% endfor %}
+    </div>
+    </section>
+
+{% endblock %}

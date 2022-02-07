@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)), url('{% static 'img/talks2.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">MERL Talks</h1>
+            </div>
+        </div>
+    </section>
+    <section class="normal-section">
+        <div class="container">
+            {% for talk in talks %}
+            <div data-bss-hover-animate="pulse" class="row clearmargin clearpadding row-image-txt" style="border-width: 1px;border-style: solid;box-shadow: 5px 4px 5px rgba(33,37,41,0.3);margin-bottom: 50px;">
+                <div class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6">
+                    <iframe width="100%" height="100%" src="{{ talk.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="color: black;padding: 20px;">
+                    <h1>{{talk.name}}</h1>
+                    <hr>
+                    <p>{{ talk.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div data-bss-hover-animate="pulse" class="row clearmargin clearpadding row-image-txt" style="border-width: 1px;border-style: solid;box-shadow: -5px 4px 5px rgba(33,37,41,0.3);">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="color: black;padding: 20px;">
+                    <h1>Heading</h1>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel lorem a lectus finibus bibendum ut sagittis diam. Nunc egestas nulla in elit congue, id pellentesque ex semper. Aenean euismod tellus tincidunt massa eleifend, a efficitur lectus ultricies. Aliquam bibendum et leo quis consectetur. Integer consequat consequat mauris, id porttitor sem feugiat eu. Proin ac neque eu nisi viverra mattis. Curabitur molestie lectus ac sollicitudin faucibus. Duis congue ipsum eget justo egestas blandit.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="height: 400px;background: url('{% static 'img/about5.jpg' %}') center / cover;">
+                    <div></div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+{% endblock %}

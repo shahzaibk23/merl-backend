@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)), url('{% static 'img/office.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">Our Team</h1>
+            </div>
+        </div>
+    </section><div class="py-5 team4">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-7 text-center">
+        <h3 class="mb-3">Pillars of MERL</h3>
+        <h6 class="subtitle">The Mentors without whom the MERL dream would never have come true</h6>
+      </div>
+    </div>
+    <div class="row">
+      {% for obj in mentors %}
+      <!-- column  -->
+      <div class="col-lg-3 mb-4">
+        <!-- Row -->
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <img src="{{ obj.picture.url }}" alt="wrapkit" class="img-fluid rounded-circle" />
+          </div>
+          <div class="col-md-12 text-center">
+            <div class="pt-2">
+              <h5 class="mt-4 font-weight-medium mb-0">{{ obj.name }}</h5>
+              <h6 class="subtitle mb-3">{{ obj.title }}</h6>
+              <p>{{ obj.description }}</p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-linkedin"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-github"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-envelope"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-info"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Row -->
+      </div>
+      {% endfor %}
+
+      
+  </div>
+</div>
+
+<div class="container">
+<hr />
+</div>
+
+    <section class="home-team">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-md-8">
+                    <div class="sectionTitle text-center">
+                        <h2>Our Researchers </h2>
+                        <p>The Team whose untiring efforts allow MERL to accomplish heights previously unimaginable.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for employee in employees %}
+                <div class="col-md-6 col-lg-3" >
+                    <div class="card card-style2 team-card">
+                        <div class="card_img" style="padding: 25px 50px;">
+                          <div style="height: 200px;background: url('{{ employee.picture.url }}') center / contain no-repeat;" ></div>
+                          <!-- <img class="img-fluid img-full loaded" style="height:234px" data-original="{{ employee.picture.url }}" data-was-processed="true" style="width: 100%;" src="{{ employee.picture.url }}" alt="{{ employee.name }} profile picture"> -->
+                            <div class="hover-overlay effect-scale">
+                                <a class="overlay_icon" href="{{ employee.linkedin }}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a class="overlay_icon" href="{{ employee.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                                <a class="overlay_icon" href="{{ employee.get_details }}"><i class="fa fa-info-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title"><a href="{{ employee.get_details }}">{{ employee.name }}</a> </h4><span>{{ employee.title | safe }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </section>
+    </div>
+{% endblock %}

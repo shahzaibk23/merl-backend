@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)), url('{% static 'img/about.jpg' %}') center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">About MERL</h1>
+                <h2 style="color: rgb(255,255,255);">Micro Electronics Research Lab</h2>
+
+            </div>
+        </div>
+    </section>
+    <section class="normal-section">
+        <div data-bss-parallax-bg="true" style="/*color: white;*//*background: linear-gradient(rgba(0,0,0,0.27), rgba(0,0,0,0.26) 97%), url(&quot;assets/img/about5.jpg&quot;) center / cover;*/">
+            <div class="container">
+                <div>
+                    <h3>Vision</h3>
+                    <p style="text-align: justify;">To enable Pakistan to become a recognized global player in the microelectronics industry.<br></p>
+                </div>
+                <div>
+                    <h3>Mission</h3>
+                    <p style="text-align: justify;">To establish Microelectronics Research Lab chapters in the universities of Pakistan where research and development can be carried out on RISC-V based ASICs, FPGAs, and SoCs.<br></p>
+                </div>
+                <div>
+                    <h3>Philosophy</h3>
+                    <p style="text-align: justify;">Microelectronics Research Lab (MERL) has an ambitious plan to lead microelectronics research and development in Pakistan. Although it is an engineering enterprise providing cutting-edge exposure to the people working for it, the MERL administration also strongly motivates them, not by the example of its power but by the power of its example, to exhibit the highest codes of personal and professional development.<br></p>
+                </div>
+                <div>
+                    <h3>Shared Die Multi Project Wafer (SDMPW) Service</h3>
+                    <ul>
+                        <li>Deals with foundries like Global foundries, TSMC and SMC etc.<br></li>
+                        <li>Offers a cost competitive service for aggregating blocks/IPs from within Pakistan.<br></li>
+                        <li>Minimum area MPW block Size would be bought from foundries and offered in smaller sub-blocks to academic institutions.<br></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Design Tools and Training</h3>
+                    <ul>
+                        <li>Acquire academic EDA licenses for SoC design.<br></li>
+                        <li>Offers training in the use of the design tools.<br></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>MERL System-on-Chip Services</h3>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <img src="{% static 'img/MERL_soc.png' %}" style="width:100%;" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>MERL Five Year Plan</h3>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <img src="{% static 'img/five_year.jpeg' %}" style="width:100%;" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

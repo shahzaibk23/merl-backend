@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)),{% if obj.thumbnail %} url('{{obj.thumbnail.url}}') {% else %} url('{% static 'img/project3.jpg' %}') {% endif %} center / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h1 style="color: rgb(255,255,255);font-size: 50px;">{{obj.title}}</h1>
+            </div>
+        </div>
+</section>
+
+<section class="normal-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="text-align: justify;">
+                <p >{{ obj.content|safe }}</p>
+            </div>
+            <div class="col-md-6">
+                <br />
+               
+                
+                <!-- {% if obj.image1 %}
+                <br />
+                <br />
+                    <img src="{{obj.image1.url}}" style="width: 100%;" />
+                {% endif %} -->
+                {% if obj.image2 %}
+                    <img src="{{obj.image2.url}}" style="width: 100%;" />
+                {% endif %}
+                {% if obj.image3 %}
+                <br />
+                <br />
+                    <img src="{{obj.image3.url}}" style="width: 100%;" />
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}
