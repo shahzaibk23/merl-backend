@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    /* ----- Variables ----- */
+/* ----- Global ----- */
+
+  
+  .all-tapeouts-section {
+    grid-template-rows: 1fr;
+    font-family: "Raleway", sans-serif;
+    background-color: #2aafe5;
+    padding-top: 20vh;
+  }
+
+  .all-tapeouts-section .main-tapeout:hover {
+    cursor: pointer;
+  }
+  
+  .all-tapeouts-section h3 {
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: #a6a6a6;
+  }
+  
+  .all-tapeouts-section img {
+    max-width: 100%;
+    filter: drop-shadow(1px 1px 3px #a6a6a6);
+  }
+  
+  /* ----- Product Section ----- */
+  .all-tapeouts-section .product {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    margin: 10px 20px;
+    padding: 2.5em 0;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  /* ----- Photo Section ----- */
+  .all-tapeouts-section .product__photo {
+    position: relative;
+  }
+  
+  .all-tapeouts-section .photo-container {
+    position: absolute;
+    left: -2.5em;
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .all-tapeouts-section .photo-main {
+    border-radius: 6px;
+    background-color: #9be010;
+    background: radial-gradient(#e5f89e, #96e001);
+  }
+  .all-tapeouts-section .photo-main .controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em;
+    color: #fff;
+  }
+  .all-tapeouts-section .photo-main .controls i {
+    cursor: pointer;
+  }
+  .all-tapeouts-section .photo-main img {
+    position: absolute;
+    left: -3.5em;
+    top: 2em;
+    max-width: 110%;
+    filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+  }
+  
+  .all-tapeouts-section .photo-album {
+    padding: 0.7em 1em;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+  }
+  .all-tapeouts-section .photo-album ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .all-tapeouts-section .photo-album li {
+    float: left;
+    width: 55px;
+    height: 55px;
+    padding: 7px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+  }
+  
+  /* ----- Informations Section ----- */
+  .all-tapeouts-section .product__info {
+    padding: 0.8em 0;
+  }
+  
+  .all-tapeouts-section .title h1 {
+    margin-bottom: 0.1em;
+    color: #4c4c4c;
+    font-size: 1.5em;
+    font-weight: 900;
+  }
+  .all-tapeouts-section .title span {
+    font-size: 0.7em;
+    color: #a6a6a6;
+  }
+  
+  .all-tapeouts-section .price {
+    margin: 1.5em 0;
+    color: #263683;
+    font-size: 1.2em;
+  }
+  .all-tapeouts-section .price span {
+    padding-left: 0.15em;
+    font-size: 2.9em;
+  }
+  
+  .all-tapeouts-section .variant {
+    overflow: auto;
+  }
+  .all-tapeouts-section .variant h3 {
+    margin-bottom: 1.1em;
+  }
+  .all-tapeouts-section .variant li {
+    float: left;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .all-tapeouts-section .variant li:first-child, .all-tapeouts-section .variant li:hover {
+    border: 1px solid #a6a6a6;
+  }
+  .all-tapeouts-section .variant li:not(:first-child) {
+    margin-left: 0.1em;
+  }
+  
+  .all-tapeouts-section .description {
+    clear: left;
+    margin: 2em 0;
+  }
+  .all-tapeouts-section .description h3 {
+    margin-bottom: 1em;
+  }
+  .all-tapeouts-section .description ul {
+    font-size: 0.8em;
+    list-style: disc;
+    margin-left: 1em;
+  }
+  .all-tapeouts-section .description li {
+    margin-bottom: 0.5em;
+  }
+  
+  .all-tapeouts-section .buy--btn {
+    padding: 1.5em 3.1em;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #fff;
+    background-color: #263683;
+    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    cursor: pointer;
+  }
+  .all-tapeouts-section .buy--btn:active {
+    transform: scale(0.97);
+  }
+  
+  /* ----- Footer Section ----- */
+  .all-tapeouts-section footer {
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+  }
+  .all-tapeouts-section  footer a {
+    color: #4c4c4c;
+  }
+  .all-tapeouts-section footer a:hover {
+    color: #ff3f40;
+  }
+</style>
+
+<section class="all-tapeouts-section">
+<div class="container">
+    <div class="row">
+        {% for tapeout in tapeouts %}
+    <div class="col-md-6">
+        <section class="product">
+            <div class="product__photo">
+                <div class="photo-container">
+                    <div class="photo-main" style="background-image: url('{{ tapeout.gds.url }}');background-size: contain;background-repeat: no-repeat; background-position: center;">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="product__info">
+                <div class="title">
+                    <h1 {% comment %}onclick="window.location.href = '{% url 'tapeout_details' tapeout.id %}'" class="main-tapeout" {% endcomment %}>{{ tapeout.title }}</h1>
+                    <span>MPW{{ tapeout.mpw }}</span>
+                </div>
+                <!-- <div class="price">
+                    R$ <span>7.93</span>
+                </div> -->
+                
+                <div class="description">
+                    {{ tapeout.description }}
+                </div>
+                    <a style="text-decoration: none;" href="{{ tapeout.efabless_link }}" target="_blank" class="buy--btn">Efabless Link</a>
+                  
+                
+                
+            </div>
+        </section>
+    </div>
+   
+    {% endfor %}
+    </div>
+</div>
+    
+ 
+</section>
+
+
+{% endblock %}

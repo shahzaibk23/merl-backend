@@ -1,0 +1,1 @@
+from MERLRevamp.wsgi import application

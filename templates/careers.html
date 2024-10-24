@@ -1,0 +1,765 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+body {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU1N2I4ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M3ZTVjZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: linear-gradient(to right top, #557b8e 0%, #c7e5ce 100%);
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+ 
+}
+.career-section {
+    padding-top: 20vh;
+    min-height: 100vh;
+}
+.career-section #tag a{
+    color: #093b4e;
+    font-weight: bold;
+}
+.career-section #aboutmerl {
+    background-color: #ffffffb5;
+    border-radius: 15px;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+.career-section #aboutmerl h2{
+    color: black;
+}
+
+.career-section h2 {
+  color: #fff;
+}
+
+.career-section input {
+  -webkit-appearance: none;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.career-section a {
+  text-decoration: none;
+}
+.career-section ul {
+    padding-left: 0px;
+}
+
+.career-section .cardd {
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.career-section .card__header {
+  flex-basis: 100%;
+  margin: 80px 20px 40px;
+}
+.career-section .card__header .description {
+  color: #777;
+  font-size: .8rem;
+  text-align: center;
+}
+.career-section .card__content {
+  flex-basis: 100%;
+  padding: 50px;
+  position: relative;
+}
+
+.career-section h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.career-section .req {
+  border: 0 none;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  outline: none;
+  transition: all .1s linear;
+  width: 100%;
+  position: relative;
+}
+.career-section .req:focus {
+  outline: 0;
+  background: white;
+}
+
+.career-section .field {
+  margin-bottom: 40px;
+  position: relative;
+}
+.career-section .field.line {
+  border-bottom: 1px solid #eee;
+}
+
+.career-section .placeholder {
+  cursor: text;
+  position: absolute;
+  top: 10px;
+  color: #909090;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.career-section input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.97);
+  color: #212121;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: all 0.2s ease-in-out;
+}
+.career-section input.ui-full + label, .career-section input:focus + label {
+  color: #3FB8AF;
+  font-size: 12px;
+  transform: translate3d(0, -25px, 0);
+}
+
+.career-section label {
+  position: absolute;
+  color: #909090;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.career-section #choice option {
+  color: black;
+}
+
+.career-section .empty {
+  color: gray;
+}
+
+.career-section #choice {
+  font-family: 'Lato';
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  padding-right: 50px;
+  margin-top: 5px;
+  font-size: .9rem;
+}
+
+.career-section .dropdown-wrapper {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px 5px;
+  position: relative;
+}
+.career-section .dropdown-wrapper:after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+  color: #3FB8AF;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+.career-section .dropdown-wrapper.outline {
+  border: 1px solid rgba(63, 184, 175, 0.5);
+  box-shadow: 0 0 10px rgba(63, 184, 175, 0.2);
+}
+
+.career-section select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: 0 none;
+  font-size: .8em;
+  outline: 0;
+}
+
+.career-section .right {
+  float: right;
+}
+
+.career-section .inline {
+  display: inline-block;
+}
+
+.career-section #btn {
+  background-color: #fff;
+  border: 1px solid #3FB8AF;
+  color: #3FB8AF;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.career-section #btn:hover {
+  background-color: #3FB8AF;
+  color: #fff;
+}
+.career-section #btn:active {
+  background-color: #38a59d;
+}
+.career-section #btn[disabled] {
+  background-color: #fff !important;
+  color: #3FB8AF !important;
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+.career-section a {
+  color: #3FB8AF;
+}
+.career-section a:hover {
+  color: #38a59d;
+}
+
+.career-section .ui-full:invalid + label {
+  color: red;
+}
+
+.career-section .modal {
+  background-color: #fff;
+  border-radius: 5px;
+  display: none;
+  padding: 30px 50px 30px 90px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.career-section .modal.show {
+  -webkit-animation: grow 1s 1;
+          animation: grow 1s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.career-section .modal.shrink {
+  -webkit-animation: shrink 1.5s 1;
+          animation: shrink 1.5s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.career-section .modal:before {
+  color: #3FB8AF;
+  content: "\f00c";
+  font-family: 'FontAwesome';
+  font-size: 40px;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  margin-top: -25px;
+}
+.career-section .modal h2 {
+  color: #3FB8AF;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.career-section .modal p {
+  font-size: .9rem;
+  line-height: 1.5rem;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scaleX(0) scaleY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1.1) scaleY(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scaleX(0) scaleY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1.1) scaleY(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1) scaleY(1);
+  }
+}
+@-webkit-keyframes shrink {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0deg) scaleX(0) scaleY(0);
+  }
+}
+@keyframes shrink {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scaleX(1) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0deg) scaleX(0) scaleY(0);
+  }
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.career-section .focus {
+  font-weight: bold;
+}
+
+.career-section #refer_pos {
+  display: inline-block;
+}
+
+.career-section .close-modal {
+  cursor: pointer;
+  float: right;
+  position: relative;
+}
+.career-section .close-modal:before {
+  color: #aaa;
+  content: "\f00d";
+  position: absolute;
+  right: -40px;
+  top: -20px;
+  padding: 10px;
+  font-family: 'FontAwesome';
+  transition: all 0.2s ease-in-out;
+}
+.career-section .close-modal:hover:before {
+  color: #919191;
+}
+
+.career-section .reset {
+  color: #777;
+  cursor: pointer;
+  font-size: .8rem;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  display: table;
+  transition: all 0.2 ease-in-out;
+}
+.career-section .reset:hover {
+  color: #5e5e5e;
+}
+
+.career-section .refer-card {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  max-width: 475px;
+  display: none;
+  transition: all 0.6s ease-in-out;
+}
+.career-section .refer-card.fade {
+  display: block;
+  -webkit-animation: drop .3s 1;
+          animation: drop .3s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    transform: translateY(-70px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-70px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.career-section li {
+  list-style: none;
+}
+
+.career-section .positions {
+  display: table;
+  margin: 100px auto;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: fade .3s 1;
+          animation: fade .3s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.career-section .positions.fadeOut {
+  display: none;
+  -webkit-animation: fadeOut .4s 1;
+          animation: fadeOut .4s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.career-section .positions ul {
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+.career-section .positions .pos-card {
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  padding: 25px;
+  flex-basis: 100%;
+  margin: auto;
+  transition: all 0.4s ease-in-out;
+}
+.career-section .positions .pos-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.career-section .positions .pos-card:hover .date {
+  right: 100px;
+}
+.career-section .positions .pos-card:hover .refer {
+  right: 0;
+  opacity: 1;
+  z-index: 9;
+}
+v.positions .pos-card:last-child {
+  border-bottom: 0 none;
+}
+.career-section .positions .content {
+  position: relative;
+}
+.career-section .positions .title {
+  margin-bottom: 5px;
+}
+.career-section .positions .title.new:after {
+  content: "New";
+  padding: 4px 6px;
+  font-size: .6rem;
+  margin-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #3FB8AF;
+  border-radius: 3px;
+}
+.career-section .positions .dept {
+  color: #777;
+  font-size: .8rem;
+}
+.career-section .positions .date, .positions .refer {
+  font-size: .8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: table;
+  bottom: 0;
+  margin: auto;
+  color: #777;
+  transition: all 0.3s ease-in-out;
+}
+.career-section .positions .refer {
+  opacity: 0;
+  padding: 15px 20px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease-in-out;
+}
+.career-section .positions .refer:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.career-section .positions .desc {
+  display: none;
+  color: #555;
+  font-size: .9rem;
+  transition: all 0.2s ease-in-out;
+}
+.career-section .positions .desc.reveal {
+  display: block;
+  -webkit-animation: fade .5s 1;
+          animation: fade .5s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  padding-top: 30px;
+  visibility: visible;
+}
+.career-section .positions .desc li {
+  list-style: circle;
+  margin-bottom: 15px;
+  line-height: 1.5rem;
+  margin-left: 20px;
+}
+.career-section .positions .desc li:last-child {
+  margin-bottom: 0;
+}
+
+.career-section h2 {
+  margin-bottom: 30px;
+}
+
+.career-section .return {
+  display: none;
+  width: 475px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding: 15px;
+  opacity: 1;
+}
+.career-section .return:hover {
+  opacity: .7;
+}
+.career-section .return:before {
+  content: "\f104";
+  font-family: 'FontAwesome';
+  color: #fff;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.career-section .return:hover:before {
+  opacity: .7;
+}
+
+
+</style>
+
+<section class="career-section">
+
+    
+<div class="container positions">
+    <h2>Job Openings</h2>
+    <ul>
+        {% for job in jobs %}
+      <li class="pos-card" id="pos_1">
+        <div class="content">
+          <div class="title {% if job.new %} new {% endif %}">{{ job.title }}</div>
+          <div class="dept">{{ job.dept }}</div>
+          <div class="date">Karachi</div>
+          <!-- <div class="refer">Refer</div> -->
+        </div>
+        <ul class="desc">
+            {% for line in job.content %}
+          <li>{{ line }}</li>
+          {% endfor %}
+          
+        </ul>
+      </li>
+      {% endfor %}
+   
+    </ul>
+  </div>
+  
+  
+  <div id="aboutmerl" class="container">
+
+    <h2>About MERL</h2>
+    <p>MERL is an equal opportunity employer does not discriminate based on race, ethnicity, color, religion, sex or social background.</p>
+    <p>MERL strives to provide an equitable work environment based on meritocracy, trust, respect and fairness.</p>
+    <p>Training would be provided in the area of deficiencies. Need commitment from potential candidates for 2-3yrs.</p>
+    <p>Competitive stipends/Salaries would be given matching the education and skill set as per offered in the local market.</p>
+
+  </div>
+<br><br>
+  <div id="tag" class="container">
+    <h1>Please Send you Resume to <a href="mailto:merl@uit.edu">merl@uit.edu</a></h1>
+  </div>
+<br><br>
+</section>
+
+<script>
+
+    $('.btn').click(function(){
+        $('.dropdown-menu').toggle();
+     });
+     
+     $('#choice').change(function () {
+         if($(this).val() == "") {
+            $(this).addClass("empty");
+            
+          }
+         else {
+            $(this).removeClass("empty")}
+           
+     });
+     
+         $('form > div input, form > div select').change(function() {
+             var empty = false;
+           
+            $('.req').each(function(){
+               if ($(this).val()==""){
+               $(this).removeClass('ui-full')
+            }
+            else {
+               $(this).addClass('ui-full');
+            }
+            });
+            
+              if ($('#choice').val()==""){
+                       empty = true;
+                    }
+             $('form > div input').each(function() {
+                 if ($(this).val() == '' ){
+                     empty = true;
+                  
+                 }
+              
+             });
+           
+           
+             if (empty) {
+                 $('#btn').attr('disabled', 'disabled'); 
+             } 
+             else {
+                
+                 $('#btn').removeAttr('disabled'); 
+             }
+          
+         });
+     
+     $('.referral').submit(function(e) {
+        if (this.checkValidity()){
+           e.preventDefault();
+            $("html, body").animate({ scrollTop: 0 }, 600);
+        
+           $('#refer_name').html($('#name').val());
+             $('#refer_pos').html($('#position').val());
+             $('.modal').slideDown().addClass('show').removeClass('shrink');
+           e.preventDefault();
+        }
+        else {}
+     });
+     
+     $('.close-modal').click(function(){
+        $('.modal').removeClass('show').addClass('shrink').slideUp();
+     })
+     
+     $('.reset').click(function(){
+        $('.modal').removeClass('show').addClass('shrink').slideUp();
+       $('.req').val("").removeClass('ui-full');
+       $('#choice').val("").addClass('empty');
+          $('#btn').attr('disabled', 'disabled'); 
+     });
+     
+     $('select').focus(function(){
+        $('.dropdown-wrapper').addClass('outline');
+     });
+     
+     $('select').on('focusout',function(){
+        $('.dropdown-wrapper').removeClass('outline');
+     });
+     
+     $('.pos-card').click(function(){
+        $('.desc').removeClass('reveal');
+       $(this).find('.desc').toggleClass('reveal');
+     
+     });
+     
+     $('.refer').click(function(e){
+        e.stopPropagation();
+      //  $('.positions').animate({ height: 'toggle', opacity: 'toggle' }, 'medium');
+        $('.positions').addClass('fadeOut');
+        $('.refer-card').addClass('fade');
+        $('.return').fadeIn('fast');
+     });
+     
+     $('.return').click(function(){
+        $('.refer-card').removeClass('fade');
+          $(this).hide();
+        $('.positions').delay('200').removeClass('fadeOut');
+        $('.desc').removeClass('reveal');
+     });
+     
+     $('#pos_1 .refer').click(function(){
+        $('#position').val('UI/UX Designer').addClass('ui-full');
+        $('#choice').val(4).removeClass('empty');
+     });
+     
+     $('#pos_2 .refer').click(function(){
+        $('#position').val('Sales Manager').addClass('ui-full');
+        $('#choice').val(2).removeClass('empty');
+     });
+     
+     $('#pos_3 .refer').click(function(){
+        $('#position').val('Business Analyst').addClass('ui-full');
+        $('#choice').val(6).removeClass('empty');
+     });
+     
+     
+
+</script>
+
+
+{% endblock %}

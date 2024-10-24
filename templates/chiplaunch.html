@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="HKCHjOus"></script>
+<section id="top">
+        <div data-bss-parallax-bg="true" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)),url('{% static 'img/launch_bg1.jpeg' %}') bottom / cover;height: 100vh;">
+            <div class="container" style="padding-top: 40vh;text-align: center;">
+                <h5 style="padding-left:40px; text-align:left; color: rgb(255,255,255);font-size: 25px;text-shadow:6px 2px 10px #000000a2"> 5<sup>th</sup>March,2022 </h5>
+                <h1 style="color: rgb(255,255,255);font-size: 45px;text-shadow:6px 2px 10px #000000a2">Celebrating Pakistan's First Open Source RISC-V based SoC</h1>
+                <h3 style="color: rgb(255,255,255);font-size: 30px;text-shadow:6px 2px 10px #000000a2">The President of Pakistan - Dr. Arif Alvi visited MERL - UIT University</h3>
+
+            </div>
+        </div>
+</section>
+
+<style>
+    .head {
+        border-left: #499BEA solid 5px;
+        padding-left: 10px;
+    }
+    p{
+        text-align: justify;
+        font-weight:300;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .merl{
+        color: #2159A6;
+    }
+    #alag{
+        color: #00401A;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .roww img{
+        width: 100%;
+    }
+    @media (max-width:700px){
+        #top h1 {
+            font-size: 30px !important;
+        }
+        #top h3 {
+            font-size: 20px !important;
+        }
+        #top h5 {
+            text-align: center !important;
+        }
+        .roww img{
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+<section class="normal-section" style="margin-top: 10vh;">
+    <div class="container">
+        <h3 class="head">The Historic Moment of Micro Electronics Research Lab (MERL)</h3>
+        <br>
+        <p>The <b class="merl">Micro Electronics Research Lab (MERL)</b> at UIT University has created Pakistan’s first two OpenSource RISC-V ISA based System on Chips (SoC). The fabrication cost of SoCs is sponsored by Google in a free shuttle program “OpenMPW ''. The code is available on GitHub and anyone can reuse it according to their need.
+
+        </p>
+        <br>
+         <p>   In the inauguration ceremony of the microprocessor held on Saturday, the president said the creation of the open source microprocessor by the UIT University’s students and professors was a huge achievement. He said the varsity had tried to bridge a huge gap in the IT industry in Pakistan. According to the President of Pakistan <b>Dr. Arif Alvi</b>, “By the year 2030 chip-manufacturing will be a $1.3 billion industry and In the years to come, the IT sector will be a one-billion-dollar industry itself, for which there will be a need for more than 80 million students”. He also encouraged the listeners to be involved in the game of OpenSource; it will change the world soon.
+
+         </p><br><p>  Addressing Chairman Silicon Federation <b>Dr. Naveed Sherwani</b>, he said that in Pakistan 40 chips and design labs would be formed. He said that it was his desire that students not go abroad and it was the state’s responsibility to provide good job opportunities in the country. The IT industry is a shining light of Pakistan, and the UIT University is that varsity of Pakistan, they kicked off chip manufacturing in a small lab and today has done wonders.
+
+        </p><br><p>  The acting vice chancellor of the UIT University, <b>Dr Shoaib Zaidi</b>, said the Micro Electronics Research Lab (MERL) has made Pakistan independent in chip-manufacturing. The computer chip, he pointed out, was the most important element of the IT industry. He shared how two students were selected globally in the Linux Foundation’s Mentorship Programme of Spring 2022 from among 4,000 students and two graduates got fully funded Master's leading to PhD scholarships in  top universities of the USA. He announced these trailblazers  would spread chip-manufacturing in the entire country.
+
+        </p><br><p>  Intel Chip Design Engineer <b>Dr Roomi Naqvi</b> and Chairman Silicon Federation <b>Naveed Sherwani</b> also addressed the ceremony.
+            
+            <b id="alag">“Pakistan waited 70 years to tape out it's first chip.”</b> Sherwani said, adding that their mission was to teach more than 1,000 students how to prepare the open source chip in Pakistan.</p>
+
+<br><br>
+        <h3 style="text-align:center">- <span style="color: #00401A; text-shadow: 0px 1px 7px rgb(255, 255, 255);">PAKISTAN</span> <span style="color: white;text-shadow: 0px 1px 7px black;"> ZINDABAD!</span> -</h3>
+        <br><br>
+        <br><br>
+
+        <h3 class="head">Some Moments Captured from the Inauguration Ceremony</h3>
+        <div class="row roww">
+            <div class="col-md-6">
+                <img src="{% static 'img/launch/1.jpeg' %}" alt="Team MERL with the President of Pakistan"/>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/launch/2.jpeg' %}" />
+            </div>
+        </div>
+        <br>
+        <div class="row roww">
+            <div class="col-md-4">
+                <img src="{% static 'img/launch/3.jpeg' %}" />
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/launch/4.jpeg' %}" />
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/launch/5.jpeg' %}" />
+            </div>
+        </div>
+        <br>
+        <div class="row roww">
+            <div class="col-md-6">
+                <img src="{% static 'img/launch/7.jpeg' %}" />
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/launch/6.jpeg' %}" />
+            </div>
+        </div>
+
+        <br><br><br><br>
+        <h3 class="head">Speech Livestream of Dr. Arif Alvi (President of Islamic Republic of Pakistan)</h3>
+        
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12">
+                <div class="fb-video" data-href="https://www.facebook.com/PresOfPakistan/videos/352405700098621" data-width="" data-show-text="true"><blockquote cite="https://www.facebook.com/PresOfPakistan/videos/352405700098621/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PresOfPakistan/videos/352405700098621/">President Dr. Arif Alvi addressing an event on the First Open Source Pakistani Designed Computer Chip.</a><p>Live Stream: 👇
+
+                    Karachi: President Dr. Arif Alvi addressing an event on the First Open Source Pakistani Designed Computer Chip.
+                    
+                    (05-Mar-22)</p>Posted by <a href="https://www.facebook.com/PresOfPakistan">The President of Pakistan</a> on Friday, March 4, 2022</blockquote></div>
+                </div>
+            <!-- <div class="col-md-2"></div> -->
+        
+            </div>
+            
+        </div>
+        </section>
+
+{% endblock %}

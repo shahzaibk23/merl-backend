@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load mathfilters %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/mentors.css' %}" />
+<link rel="stylesheet" href="{% static 'css/employee.css' %}" />
+<style>
+{% for i in "1"|make_list %}
+  .team-list .team-member:nth-child({{forloop.counter|mul:1}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:1}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:1}}) .hover-effect:after {
+    background-color: rgba(180, 86, 117, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:2}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:2}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:2}}) .hover-effect:after {
+    background-color: rgba(253, 136, 50, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:3}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:3}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:3}}) .hover-effect:after {
+    background-color: rgba(98, 78, 135, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:4}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:4}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:4}}) .hover-effect:after {
+    background-color: rgba(89, 122, 146, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:5}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:5}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:5}}) .hover-effect:after {
+    background-color: rgba(248, 55, 175, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:6}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:6}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:6}}) .hover-effect:after {
+    background-color: rgba(174, 109, 163, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:7}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:7}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:7}}) .hover-effect:after {
+    background-color: rgba(255, 94, 156, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:8}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:8}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:8}}) .hover-effect:after {
+    background-color: rgba(67, 26, 15, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:9}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:9}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:9}}) .hover-effect:after {
+    background-color: rgba(255, 89, 83, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:10}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:10}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:10}}) .hover-effect:after {
+    background-color: rgba(255, 99, 128, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:11}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:11}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:11}}) .hover-effect:after {
+    background-color: rgba(105, 164, 66, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:12}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:12}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:12}}) .hover-effect:after {
+    background-color: rgba(148, 118, 58, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:13}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:13}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:13}}) .hover-effect:after {
+    background-color: rgba(187, 50, 101, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:14}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:14}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:14}}) .hover-effect:after {
+    background-color: rgba(255, 25, 93, 0.2);
+  }
+  .team-list .team-member:nth-child({{forloop.counter|mul:15}}) .hover-effect, .team-list .team-member:nth-child({{forloop.counter|mul:15}}) .hover-effect:before, .team-list .team-member:nth-child({{forloop.counter|mul:15}}) .hover-effect:after {
+    background-color: rgba(255, 97, 63, 0.2);
+  }
+  {% endfor %}
+
+</style>
+
+<section id="mentors">
+<div class="circle-top"></div>
+<div class="circle-bottom"></div>
+<header style="background-image:linear-gradient(to top, #1f2c3a 0%, #2f3c4742 100%), url('{% static 'images/lab.jpeg' %}'), url('{% static 'images/lab2.jpeg' %}'), url('{% static 'images/lab3.jpeg' %}');background-size: cover, contain, contain, contain;background-position: center,left,center, right;background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;">
+  <div class="header-content">
+    <span>Foundational Figures of MERL</span>
+    <h1>Architects Behind the MERL Dream</h1>
+  </div>
+</header>
+<section>
+  <div class="card-top">
+    {% for mentor in mentors %}
+    <div class="card">
+      <img src="{{ mentor.picture.url }}" alt="{{ mentor.name }}">
+      <h2>{{ mentor.name }}</h2>
+      <h4>{{ mentor.title }}</h4>
+      <p> {{ mentor.description | safe }} </p>
+    </div>
+    {% endfor %}
+    
+</section>
+</section>
+
+<div class="team-section">
+    <div class="pointer">
+      <div class="point-1"></div>
+      <div class="point-2"></div>
+      <div class="line"></div>
+    </div>
+    <ul class="team-list">
+        {% for employee in employees %}
+        <a href="{{ employee.get_details }}">
+      <li class="team-member" data-name="{{ employee.name }}" data-job-title="{{ employee.title | safe }}"><img src="{{ employee.picture.url }}" alt="user image"/>
+        <div class="hover-effect"></div>
+      </li>
+    </a>
+      {% endfor %}
+      
+    </ul>
+    <div class="center-area">
+      <div class="our-team" data-title="Our Team" data-job-title="The Rockstars">
+        <h4 class="note">Team behind MERL's success</h4>
+        <h2 class="title">Our Researchers</h2>
+      </div>
+      <div class="text-center">
+        <div class="member-info">
+          <h4 class="job-title"></h4>
+          <h3 class="name"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script type="application/javascript" src="{% static 'js/jquey_mousewheel.min.js' %}"></script>
+  <script type="application/javascript" src="{% static 'js/employee.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,491 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Traffolight', serif;
+        font-size: 14px;
+        line-height: 1.67;
+        color: #444;
+        padding: 60px 0;
+        background-color: #eee;
+    }
+    
+    a {
+        color: #e45245;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    /*  Team Starts */
+    .team-members {
+        transform: rotate(-45deg);
+    }
+    .team-members li > div {
+        float: left;
+        width: 20%;
+    }
+    
+    .team-members li:nth-child(2) > div:first-child {
+        margin-left: 20%;
+    }
+    
+    .team-members li:last-child > div:first-child {
+        margin-left: 40%;
+    }
+    
+    .member-details > div {
+        background-color: #ddd;
+        margin: 5px;
+    }
+    .member-details img {
+        transform: rotate(45deg) translate(0, 15px) scale(1.2);
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* hover content - style */
+    .member-details > div {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .member-info {
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg) translate(-12px, 15px);
+        left: 0;
+        right: 0;
+        z-index: 2;
+        text-align: center;
+    }
+    
+    .member-info h3,
+    .member-info p {
+        margin: 0;
+        color: #fff;
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .member-info h3 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+        top: -100px;
+    }
+    
+    .member-info p {
+        font-weight: 300;
+        font-size: 12px;
+        bottom: -150px;
+    }
+    
+    .member-details > div:after {
+        content: '';
+        background-image: linear-gradient(45deg, #2ab0e5bf 50%, transparent 50%);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    /* hover content - onhover */
+    .member-details *,
+    .member-details > div:after {
+        cursor: pointer;
+        transition: all .4s ease;
+    }
+    
+    .member-details:hover *,
+    .member-details:hover > div:after {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .member-details:hover .member-info h3 {
+        top: 0;
+    }
+    
+    .member-details:hover .member-info p {
+        bottom: 0;
+    }
+    
+    /* Team overview */
+    .team-overview {
+        padding-right: 15px;
+    }
+    .team-overview h2 {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .team-overview > a {
+        margin-bottom: 30px;
+        display: block;
+    }
+    
+    .team-overview > a:before {
+        content: '';
+        width: 10px;
+        height: 2px;
+        position: relative;
+        top: -3px;
+        margin-right: 5px;
+        background-color: #ccc;
+        display: inline-block;
+    }
+    
+    
+    /* For centering elements - optional - Can use table,tablecell instead */
+    .flex-center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .flex-center > div:first-child {
+        order: 2;
+    }
+    
+    /* RESPONSIVE */
+    @media only screen and (max-width : 992px) {
+        .sm-no-flex {
+            display: block;
+        }
+        .sm-no-float {
+            float: none !important;
+        }
+        .sm-text-center {
+            text-align: center;
+        }
+    }
+    
+    @media only screen and (max-width : 550px) {
+        .team-members li {
+            text-align: center;
+        }
+        .team-members li > div {
+            float: none;
+            display: inline-block;
+            width: 30%;
+            margin: 0 !important;
+        }
+        .team-members {
+            transform: rotate(0);
+        }
+        .member-details img {
+            transform: rotate(0) translate(0, 0);
+        }
+        .team-overview {
+            padding: 15px;
+        }
+        
+    }
+    
+    @media only screen and (max-width : 399px) {
+        .team-members li > div {
+            width: 48%;
+        }
+    }
+    
+    /* extra */
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.6rem;
+        background-color: #ededed;
+    }
+    .copyright a {
+        display: inline-block;
+        padding: 15px 2px;
+    }
+    .copyright a:not(:last-child):after {
+        content: "/";
+        margin-left: 10px;
+    }
+    
+    @media only screen and (max-width: 480px) {
+        #about-section{
+            padding-top: 20vh;
+        }
+    }
+    
+</style>
+
+<section id="about-section" style="min-height: 120vh;">
+	<div class="container">
+		<div class="row flex-center sm-no-flex">
+
+			<div class="pull-right sm-no-float col-md-7">
+				<ul class="team-members">
+					<!-- single member row starts -->
+					<li class="clearfix">
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.0.employee.get_details }}'">
+								<img src="{{ employee.0.picture.url }}" alt="{{ employee.0.title }}">
+								<div class="member-info">
+									<h3>{{ employee.0.name }}</h3>
+									<p>{{ employee.0.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.1.employee.get_details }}'">
+								<img src="{{ employee.1.picture.url }}" alt="{{ employee.1.title }}">
+								<div class="member-info">
+									<h3>{{ employee.1.name }}</h3>
+									<p>{{ employee.1.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.2.employee.get_details }}'">
+								<img src="{{ employee.2.picture.url }}">
+								<div class="member-info">
+									<h3>{{ employee.2.name }}</h3>
+									<p> {{ employee.2.title }} </p>
+								</div>
+							</div>
+						</div>
+					</li><!-- /single member row ends -->
+					
+					<!-- single member row starts -->
+					<li class="clearfix">
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.3.employee.get_details }}'">
+								<img src="{{ employee.3.picture.url }}" alt="{{ employee.3.title }}">
+								<div class="member-info">
+									<h3>{{ employee.3.name }}</h3>
+									<p>{{ employee.3.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.4.employee.get_details }}'">
+								<img src="{{ employee.4.picture.url }}" alt="{{ employee.4.title }}">
+								<div class="member-info">
+									<h3>{{ employee.4.name }}</h3>
+									<p>{{ employee.4.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.5.employee.get_details }}'">
+								<img src="{{ employee.5.picture.url }}" alt="{{ employee.5.title }}">
+								<div class="member-info">
+									<h3>{{ employee.5.name }}</h3>
+									<p>{{ employee.5.tile }}</p>
+								</div>
+							</div>
+						</div>
+					</li><!-- /single member row ends -->
+
+					<!-- single member row starts -->
+					<li class="clearfix">
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.6.employee.get_details }}'">
+								<img src="{{ employee.6.picture.url }}" alt="{{ employee.6.title }}">
+								<div class="member-info">
+									<h3>{{ employee.6.name }}</h3>
+									<p>{{ employee.6.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.7.employee.get_details }}'">
+								<img src="{{ employee.7.picture.url }}" alt="{{ employee.7.title }}">
+								<div class="member-info">
+									<h3>{{ employee.7.name }}</h3>
+									<p>{{ employee.7.title }}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="member-details">
+							<div onclick="window.location.href = '{{ employee.8.employee.get_details }}'">
+								<img src="{{ employee.8.picture.url }}" alt="{{ employee.8.title }}">
+								<div class="member-info">
+									<h3>{{ employee.8.name }}</h3>
+									<p>{{ employee.8.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.13.employee.get_details }}'">
+								<img src="{{ employee.13.picture.url }}" alt="{{ employee.13.title }}">
+								<div class="member-info">
+									<h3>{{ employee.13.name }}</h3>
+									<p>{{ employee.13.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.12.employee.get_details }}'">
+								<img src="{{ employee.12.picture.url }}" alt="{{ employee.12.title }}">
+								<div class="member-info">
+									<h3>{{ employee.12.name }}</h3>
+									<p>{{ employee.12.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.11.employee.get_details }}'">
+								<img src="{{ employee.11.picture.url }}" alt="{{ employee.11.title }}">
+								<div class="member-info">
+									<h3>{{ employee.11.name }}</h3>
+									<p>{{ employee.11.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.10.employee.get_details }}'">
+								<img src="{{ employee.10.picture.url }}" alt="{{ employee.10.title }}">
+								<div class="member-info">
+									<h3>{{ employee.10.name }}</h3>
+									<p>{{ employee.10.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.9.employee.get_details }}'">
+								<img src="{{ employee.9.picture.url }}" alt="{{ employee.9.title }}">
+								<div class="member-info">
+									<h3>{{ employee.9.name }}</h3>
+									<p>{{ employee.9.title }}</p>
+								</div>
+							</div>
+						</div>
+
+                        <div class="member-details">
+							<div onclick="window.location.href = '{{ employee.14.employee.get_details }}'">
+								<img src="{{ employee.14.picture.url }}" alt="{{ employee.14.title }}">
+								<div class="member-info">
+									<h3>{{ employee.14.name }}</h3>
+									<p>{{ employee.14.title }}</p>
+								</div>
+							</div>
+						</div>
+					</li><!-- /single member row ends -->
+
+				</ul><!-- /end team-photos -->
+			</div><!-- /end col-md-8 -->
+			
+			<div class="pull-left col-md-5 sm-text-center">
+				<div class="team-overview">
+					<h2 style="margin-top: 20vh;">Who Are We?</h2>
+					<a href="{% url 'teamhome' %}">Meet the Entire Team</a>
+					<p><div style="margin-right: 20%; text-align:justify;font-size:20px">
+                        The <b>Micro Electronics Research Lab</b> is dedicated to empowering students and fostering their professional growth in the field of microelectronics. We provide a comprehensive platform for undergraduate students, offering education and training in Computer Architecture and the interface between hardware and software using the Open Source RISC-V ISA. Our goal is to bridge the gap between theoretical knowledge and practical application, enabling students to excel in industry-standard research projects and prepare for advanced academic pursuits.
+                    </div></p>
+                    
+				</div>
+			</div><!-- /end col-md-4 -->
+		</div><!-- /end row -->
+        
+	</div><!-- /end container -->
+    
+</section>
+
+<section class="clean-block" style="margin-bottom: 20vh;">
+    <div class="container">
+        <h2>Vision</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        To position Pakistan as a recognized global leader in the microelectronics industry.
+                    </div></p>
+                    <h2>Mission</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        To establish MERL chapters in universities across Pakistan, facilitating research and development on RISC-V based ASICs, FPGAs, and SoCs.
+                    </div></p>
+        <h2>Philosophy</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        MERL is committed to leading microelectronics research and development in Pakistan. We strive to inspire and motivate our team by demonstrating the highest standards of personal and professional excellence. Our approach combines cutting-edge engineering with a strong emphasis on mentorship and personal development.
+                    </div></p>
+                    <h2>Our Journey</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        The Micro Electronics Research Lab was founded with a visionary goal to introduce and establish a robust semiconductor ecosystem in Pakistan. This ambitious journey began with the strong support of the late Dr. Zahir Ali Syed, who generously provided a small lab at UIT University. His belief in our mission laid the foundation for MERL, enabling us to start with limited resources but unlimited passion.
+                    </div></p>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <img src="{% static 'img/bg5_1.png' %}" style="width: 100%;" />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="container d-flex align-items-center" style="height: 100%;">
+                                <div>
+                                        <h6>Late</h6>
+                                    <h1>Dr. Zahir Ali Syed</h1>
+                                    
+                                <h6> Mentor, Dreamer and Pillar of MERL</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <p><div style="text-align:justify;font-size:20px">
+                        One of our most significant milestones was the successful tape-out of Pakistan's first microprocessors through the Open Source MPW Shuttle program, sponsored by Google. This achievement marked a major step forward and showcased our ability to compete on a global scale. The success of this project was celebrated with the esteemed presence of Dr. Arif Alvi, the President of Pakistan, who honored us at the chip celebration ceremony. This event was a testament to the hard work and dedication of our team and the potential of Pakistan in the field of microelectronics.
+                    </div></p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{% static 'img/launch/4.jpeg' %}" style="width: 100%;" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="{% static 'img/launch_bg1.jpeg' %}" style="width: 100%;" />
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <img src="{% static 'img/launch/3.jpeg' %}" style="width: 100%;" />
+                        </div>
+                    </div>
+                    <p><div style="text-align:justify;font-size:20px">
+                        As we look to the future, MERL remains committed to continuous growth and innovation. Our ongoing projects push the boundaries of what is possible in microelectronics, and we are dedicated to mentoring the next generation of engineers and researchers. Our ultimate goal is to position Pakistan as a recognized global leader in the microelectronics industry.
+                    </div></p>
+                    <h2>Empowering Innovation</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        At MERL, students are encouraged to explore their creativity and propose their own ideas. We provide the necessary resources and mentorship to help turn their innovative concepts into reality. By nurturing their potential and guiding them through complex projects, we aim to uplift students to achieve PhD-level expertise and beyond.
+                    </div></p>
+                    <br>
+                    <hr>
+                    <br><br>
+                    <h2>MERL Testimonial</h2>
+                    <p><div style="text-align:justify;font-size:20px">
+                        Here is a Testimonial by MERL, Our complete Journey, narrated by Dr. Farhan Ahmed Karim (Software Team Lead, MERL).
+                    </div></p>
+                    <video width="100%" height="100%" controls>
+                        <source src="{% static 'videos/output.mp4' %}"  type="video/mp4">
+                       </video>
+    </div>
+</section>
+
+
+{% endblock %}

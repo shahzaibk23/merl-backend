@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    .training-page-section{
+        padding-top: 20vh;
+    }
+</style>
+
+<section class="training-page-section">
+
+    <div class="container">
+
+        {{ training.description | safe }}
+
+    </div>
+
+</section>
+
+
+{% endblock %}

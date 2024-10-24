@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="https://codepen.io/weepingomens/pen/eYdgdwm.css" />
+<style>
+    #teamdetails {
+        background:#151515;
+        display:flex;
+        place-content:center;
+        color: white;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+      }
+      
+      #teamdetails .omens-member-directory {
+          margin: 0px;
+          border-radius: 5px;
+          position: relative;
+          padding: 50px;
+          width: 570px;
+          background: #222;
+        display:grid;
+        grid:min-content min-content min-content / auto min-content;
+          grid-template-areas:"directory-info directory-icon"
+            "directory-bio directory-bio"
+            "directory-characters directory-characters";
+        overflow:hidden;
+        box-shadow:0px 0px 10px rgba(0,0,0,33%);
+      }
+      
+      #teamdetails .omens-member-directory .member-icon {
+        width:150px;
+        height:150px;
+        border-radius:100%;
+        grid-area:directory-icon;
+        position:relative;
+        background-size:cover;
+      }
+      
+      #teamdetails .omens-member-directory .member-icon:before {
+          content: '';
+          position: absolute;
+          background-image: url(https://i.ibb.co/brtq9Hp/smoke-weed-every-day.png);
+          width: 350px;
+          height: 625px;
+          background-size: cover;
+          top: -167px;
+          left: -113px;
+          transform: rotate(10deg);
+          opacity: 3%;
+        pointer-events:none;
+      }
+      
+      #teamdetails .omens-member-directory .member-information {
+          grid-area:directory-info;
+        align-self:center;
+      }
+      
+      #teamdetails .omens-member-directory h1 {
+        margin:0px;
+        font:200 60px poppins;
+        text-transform:uppercase;
+        color:#eee;
+      }
+      
+      #teamdetails .omens-member-directory .member-details {
+        grid-area:directory-details;
+        display:flex;
+        flex-flow:row wrap;
+        gap:5px;
+      }
+      
+      #teamdetails .omens-member-directory .member-details div {
+        font:700 10px roboto;
+        text-transform:uppercase;
+        color:#111;
+        background:var(--main-accent);
+        padding:5px 10px;
+        border-radius:5px;
+      }
+      
+      #teamdetails .omens-member-directory .member-bio {
+        grid-area:directory-bio;
+        padding:50px;
+        background:#333;
+        border-radius:5px;
+        margin:50px 0px;
+        font:400 13px/150% roboto;
+        text-align:justify;
+      }
+      
+      #teamdetails .omens-member-directory .member-characters {
+        grid-area:directory-characters;
+        display:flex;
+        flex-flow:row wrap;
+        gap:10px;
+        justify-content:center;
+      }
+      
+      #teamdetails .omens-member-directory .member-characters a {
+        background:var(--main-accent);
+        padding:7.5px 10px;
+        font:800 12px/100% raleway;
+        text-transform:uppercase;
+        color:#222;
+        border-radius:5px;
+      }
+</style>
+
+<div id="teamdetails">
+<div class="omens-member-directory">
+    <div class="member-information">
+    <h1>ooc name</h1>
+        <div class="member-details">
+      <div>00 yrs old</div>
+      <div>gmt-6</div>
+      <div>she/her</div>
+      <div>discord#0000</div>
+    </div>
+    </div>
+    <div class="member-icon" style="background-image:url(https://i.ibb.co/Mk165Mr/ooc1x1.png)"></div>
+    <div class="member-bio">there seems to be some confusion about this. homestuck is my intellectual property, and mine alone. all of my headcanons are 100% legitimate, where as yours are all laughably fake. there is no room for interpretation whatsoever in homestuck. not even a little bit. to claim otherwise is heresy, and also in violation of my legal rights as an artist. i hope this clears things up.
+  
+  </div>
+    <div class="member-characters">
+      <a href="#">firstname lastname</a>
+      <a href="#">atlas jeong</a>
+      <a href="#">cassandra cassidy</a>
+      <a href="#">firstname lastname</a>
+      <a href="#">atlas jeong</a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

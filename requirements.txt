@@ -1,0 +1,5 @@
+django
+pygithub
+asgiref
+django_mysql
+django-mathfilters

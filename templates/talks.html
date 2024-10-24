@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+.all-talks-section .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.all-talks-section .aside {
+  width: 60px;
+}
+
+.all-talks-section .content {
+  flex: 1;
+  background-color: #f5f6fa;
+  padding: 40px;
+}
+.all-talks-section .content-profile .card-photo {
+  background-image: url("https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+.all-talks-section .content-profile .actions {
+  display: flex;
+  justify-content: center;
+}
+.all-talks-section .content-profile .actions i {
+  font-size: 20px;
+}
+.all-talks-section .content-profile .actions i:not(:last-child) {
+  margin-right: 15px;
+}
+.all-talks-section .content .jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  border-radius: 40px;
+}
+.all-talks-section .content .jumbotron-sub {
+  display: flex;
+  justify-content: space-between;
+}
+.all-talks-section .content .jumbotron-sub h1 {
+  margin-top: 20px;
+  width: 100%;
+  border: 0;
+  border-radius: 15px;
+  background-color: #ff894f;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-align: center;
+  justify-content: center;
+
+}
+.all-talks-section .content .jumbotron-sub p {
+    text-align: justify;
+}
+
+.all-talks-section .content .jumbotron-people {
+  height: 120px;
+  width: 100%;
+}
+.all-talks-section .content .jumbotron-people .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+.all-talks-section .content .jumbotron-people .profile .photo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 65px;
+  width: 65px;
+  border-radius: 65px;
+  border: 3px #b5b5b5 solid;
+}
+.all-talks-section .content .jumbotron-people .profile p {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 300;
+  color: #fff;
+}
+
+
+.all-talks-section .content .videos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+.all-talks-section .content .videos-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.all-talks-section .content .videos-card .video {
+  height: 160px;
+  width: 250px;
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.all-talks-section .content .videos-card .video-date {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.all-talks-section .content .videos-card .video-date p {
+  font-size: 16px;
+  color: #b5b5b5;
+  margin: 5px 0;
+}
+
+.all-talks-section .panel {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: #fff;
+  padding: 20px;
+}
+@media (max-width: 1500px) {
+    .all-talks-section .panel {
+    display: none;
+  }
+}
+.all-talks-section .panel-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.all-talks-section .panel-header i {
+  font-size: 25px;
+  margin-right: 20px;
+}
+.all-talks-section .panel .people {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.all-talks-section .panel .people i {
+  cursor: pointer;
+  color: #b5b5b5;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.all-talks-section .card {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.all-talks-section .card-photo {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  border: 3px #dcdcdd solid;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.all-talks-section .card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+}
+.all-talks-section .card-content p {
+  font-size: 15px;
+  color: #b5b5b5;
+  margin-top: 5px;
+}
+
+.all-talks-section .search {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #fafafa;
+  padding: 0 20px;
+  color: #dcdcdd;
+}
+.all-talks-section .search i {
+  font-size: 18px;
+  margin-right: 15px;
+}
+.all-talks-section .search input {
+  height: 50px;
+  border: 0;
+  width: 100%;
+  background-color: red;
+  background-color: #fafafa;
+  border-radius: 25px;
+}
+.all-talks-section .search input:focus {
+  outline: none;
+}
+
+.all-talks-section .tabs {
+  display: flex;
+  height: 80px;
+  margin-top: 20px;
+  border-bottom: 4px #ededed solid;
+}
+.all-talks-section .tabs .tab {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  margin-right: 40px;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+.all-talks-section .tabs .tab span {
+  font-size: 18px;
+}
+.all-talks-section .tabs .tab:first-child div {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #ff894f;
+  position: absolute;
+  bottom: -1px;
+}
+
+.all-talks-section .divider {
+  height: 2px;
+  width: 100%;
+  background-color: #dcdcdd;
+  margin: 20px 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-button {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d6e0;
+  border: 0px none #ffffff;
+  border-radius: 52px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d6d6e0;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #d6d6e0;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+</style>
+
+<section style="margin-top: 20vh;" class="all-talks-section">
+
+    {% for talk in talks %}
+    <div class="container">
+        
+        <div class="content" style="margin:10px;border-radius: 15px;border: solid 1px rgb(153, 153, 153);">
+          
+          <div class="jumbotron">
+            <iframe src="{{ talk.video }}" height="100%" style="border-radius: 15px;" ></iframe>
+            
+            <div class="jumbotron-sub">
+              <div class="jumbotron-people">
+                <h1>{{ talk.name }}</h1>
+                <p>{{ talk.description }}</p>
+              </div>
+              
+            </div>
+        
+        </div>
+         </div>
+      </div>
+      {% endfor %}
+
+</section>
+
+{% endblock %}

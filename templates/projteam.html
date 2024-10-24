@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
+  background-size: cover;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #9E9E9E;
+  margin-top: 30px;
+}
+
+.slide-container {
+  margin: auto;
+  width: 600px;
+  text-align: center;
+}
+
+.wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+.wrapper:focus {
+  outline: 0;
+}
+
+.clash-card {
+  background: white;
+  width: 95%;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+}
+
+.clash-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.clash-card__image img {
+  width: 70%;
+}
+
+
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+  color: #EC9B3B;
+}
+
+.clash-card__level--archer {
+  color: #EE5487;
+}
+
+.clash-card__level--giant {
+  color: #F6901A;
+}
+
+.clash-card__level--goblin {
+  color: #82BB30;
+}
+
+.clash-card__level--wizard {
+  color: #4FACFF;
+}
+
+.clash-card__unit-name {
+  font-size: 22px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+  padding: 20px;
+  margin-bottom: 0px;
+  text-align: justify;
+}
+.clash-card__unit-mentors{
+    padding: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-bottom: 0px;
+
+}
+.clash-card__unit-mentors .mentor-tag{
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.clash-card__unit-mentors .mentor-tag:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.clash-card__unit-mentors .mentor-tag img{
+    width: 15%;
+    border-radius: 10%;
+    margin-right: 10px;
+}
+.clash-card__unit-mentors .mentor-tag p{
+    margin-bottom: 0px;
+}
+
+.clash-card__unit-mentors--barbarian .mentor-tag{
+  border-color: #EC9B3B;
+}
+.clash-card__unit-mentors--barbarian .mentor-tag:hover{
+  background-color: #BD7C2F;
+}
+
+
+.clash-card__image--barbarian {
+  background: linear-gradient(to right, #deb684, #EC9B3B);
+}
+
+
+
+.clash-card__unit-stats--barbarian {
+  background: #EC9B3B;
+}
+.clash-card__unit-stats--barbarian .one-third {
+  border-right: 1px solid #BD7C2F;
+}
+
+.clash-card__unit-mentors--archer .mentor-tag{
+  border-color: #EE5487;
+}
+.clash-card__unit-mentors--archer .mentor-tag:hover{
+  background-color: #D04976;
+}
+
+.clash-card__image--archer {
+  background: linear-gradient(to right, #e589a8, #EE5487);
+}
+
+
+.clash-card__unit-stats--archer {
+  background: #EE5487;
+}
+.clash-card__unit-stats--archer .one-third {
+  border-right: 1px solid #D04976;
+}
+
+
+
+.clash-card__unit-mentors--giant .mentor-tag{
+  border-color: #F6901A;
+}
+.clash-card__unit-mentors--giant .mentor-tag:hover{
+  background-color: #de7b09;
+}
+
+.clash-card__image--giant {
+  background: linear-gradient(to right, #f6bc79, #F6901A);
+}
+
+
+
+
+.clash-card__unit-stats--giant {
+  background: #F6901A;
+}
+.clash-card__unit-stats--giant .one-third {
+  border-right: 1px solid #de7b09;
+}
+
+.clash-card__unit-mentors--goblin .mentor-tag{
+  border-color: #82BB30;
+}
+.clash-card__unit-mentors--goblin .mentor-tag:hover{
+  background-color: #71a32a;
+}
+
+.clash-card__unit-stats--goblin {
+  background: #82BB30;
+}
+.clash-card__unit-stats--goblin .one-third {
+  border-right: 1px solid #71a32a;
+}
+.clash-card__image--goblin {
+  background: linear-gradient(to right, #99b96b, #82BB30);
+}
+
+
+.clash-card__unit-mentors--wizard .mentor-tag{
+  border-color: #4FACFF;
+}
+.clash-card__unit-mentors--wizard .mentor-tag:hover{
+  background-color: #309eff;
+}
+
+.clash-card__image--wizard {
+  background:linear-gradient(to right, #8cc3f3, #4FACFF);
+}
+
+.clash-card__unit-stats--wizard {
+  background: #4FACFF;
+}
+.clash-card__unit-stats--wizard .one-third {
+  border-right: 1px solid #309eff;
+}
+
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.clash-card__unit-stats .one-third {
+  width: 100%;
+  float: left;
+  padding: 20px 15px;
+  border-top: solid 1px rgba(255, 255, 255, 0.34);
+}
+
+.clash-card__unit-stats .one-third img {
+    width: 20%;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+}
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+</style>
+
+  <section class="projteam-section">
+    <div class="container" style="margin-top: 10vh;">
+        <div class=" row">
+            {% for team in teams %}
+            <div class="col-md-4 d-flex align-items-start justify-content-center">
+                <div class="wrapper">
+                    <div class="clash-card {{ team.colorVariant }}">
+                      <div class="clash-card__image clash-card__image--{{ team.colorVariant }}">
+                        <img src="{% if team.thumbnail %} {{ team.thumbnail.url }} {% else %} https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png{% endif %}" alt="barbarian" />
+                      </div>
+                      <div class="clash-card__level clash-card__level--{{ team.colorVariant }}">{{ team.project.category.name }}</div>
+                      <div class="clash-card__unit-name">{{ team.title }}</div>
+                      <div class="clash-card__unit-mentors clash-card__unit-mentors--{{ team.colorVariant }}">
+                        <h6><b><i>Mentors:</i></b></h6>
+                        {% for mentor in team.mentors.all %}
+                        <div class="mentor-tag">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <img src="{{ mentor.picture.url }}" />
+                                <div>
+                                    <p><b>{{ mentor.name }}</b></p>
+                                    <p>{{mentor.title}}</p>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        {% endfor %}
+                      </div>
+                      <div class="clash-card__unit-description">
+                        {{ team.description }}
+                      </div>
+                
+                      <div class="clash-card__unit-stats clash-card__unit-stats--{{ team.colorVariant }} clearfix">
+                         <div class="one-third" style="padding: 6px 15px;">
+                            <div class="stat" style="margin-bottom: 0px;">
+                                Team Members:
+                            </div>
+                         </div>
+                        {% for mem in team.teamMembers.all %}
+                        <div class="one-third d-flex align-items-center justify-content-start">
+                            <img src="{{ mem.picture.url }}" />
+                            <div>
+                                <div class="stat">{{ mem.name }}</div>
+                                <div class="stat-value">{{ mem.title }}</div>
+                            </div>
+                          
+                        </div>
+                        {% endfor %}
+                
+                      </div>
+                
+                    </div> <!-- end clash-card barbarian-->
+                  </div> <!-- end wrapper -->
+            </div>
+            {% endfor %}
+              
+        </div>
+    </div>
+    
+  </section>
+   
+    
+
+{% endblock %}

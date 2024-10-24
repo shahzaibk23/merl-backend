@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MERL</title>
+
+    
+    <meta name="msapplication-TileImage" content="{% static 'images/MERLLogo.png' %}">
+    <meta name="msapplication-TileColor" content="#ae8160">
+    <meta name="application-name" content="MERL">
+
+    <meta property="og:title" content={% if title %} "{{ title }}" {% else %} "Micro Electronics Research Lab (MERL)" {% endif %}>
+    <meta property="og:description" content={% if description %} "{{ description }}" {% else %} "Accelerating Engineering Innovation" {% endif %}>
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ request.path }}">
+    <meta property="og:image" content= {% if card %} "{{ card }}" {% else %} "{% static 'images/MERLLogo.png' %}"  {% endif %}/>
+    <meta property='og:image:height' content='800' />
+    <meta property='og:image:width' content='2200' />
+
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48" href="{% static 'images/MERLLogo.png' %}}">
+    <link rel="icon" type="image/png" sizes="16x16 32x32" href="{% static 'images/MERLLogo.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/MERLLogo.png' %}">
+
+    <!-- <meta name="msapplication-TileImage" content="{% static 'img/logo (1).png' %}">
+    <meta name="msapplication-TileColor" content="#ae8160">
+    <meta name="application-name" content="MERL">
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48" href="{% static 'img/logo (1).png' %}">
+    <link rel="icon" type="image/png" sizes="16x16 32x32" href="{% static 'img/logo (1).png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/logo (1).png' %}"> -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap"> -->
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <!-- NAV JS -->
+
+<script>
+  
+
+    /* Please ❤ this if you like it! */
+    
+    
+    (function($) { "use strict";
+    
+        $(function() {
+            var header = $(".start-style");
+            $(window).scroll(function() {    
+                var scroll = $(window).scrollTop();
+            
+                if (scroll >= 10) {
+                    header.removeClass('start-style').addClass("scroll-on");
+                } else {
+                    header.removeClass("scroll-on").addClass('start-style');
+                }
+            });
+        });		
+            
+        //Animation
+        
+        $(document).ready(function() {
+            $('body.hero-anime').removeClass('hero-anime');
+        });
+    
+        //Menu On Hover
+            
+        $('body').on('mouseenter mouseleave','.nav-item',function(e){
+                if ($(window).width() > 750) {
+                    var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+                    setTimeout(function(){
+                    _d[_d.is(':hover')?'addClass':'removeClass']('show');
+                    },1);
+                }
+        });	
+        
+        //Switch light/dark
+        
+        $("#switch").on('click', function () {
+            if ($("body").hasClass("dark")) {
+                $("body").removeClass("dark");
+                $("#switch").removeClass("switched");
+            }
+            else {
+                $("body").addClass("dark");
+                $("#switch").addClass("switched");
+            }
+        });  
+        
+      })(jQuery); 
+    </script>
+    
+    <!--  -->
+    
+</body>
+
+</html>

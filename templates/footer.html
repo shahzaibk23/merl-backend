@@ -1,0 +1,474 @@
+{% load static %}
+
+<style>
+    .footer-section ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    .footer-section {
+      background: #151414;
+      position: relative;
+    }
+    .footer-section .footer-cta {
+      border-bottom: 1px solid #373636;
+    }
+    .footer-section .single-cta i {
+      color: #2aafe5;
+      font-size: 30px;
+      float: left;
+      margin-top: 8px;
+    }
+    .footer-section .cta-text {
+      padding-left: 15px;
+      display: inline-block;
+    }
+    .footer-section .cta-text h4 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .footer-section .cta-text span {
+      color: #757575;
+      font-size: 15px;
+    }
+    .footer-section .footer-content {
+      position: relative;
+      z-index: 2;
+    }
+    .footer-section .footer-pattern img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 330px;
+      background-size: cover;
+      background-position: 100% 100%;
+    }
+    .footer-section .footer-logo {
+      margin-bottom: 30px;
+    }
+    .footer-section .footer-logo img {
+        max-width: 200px;
+    }
+    .footer-section .footer-text p {
+      margin-bottom: 14px;
+      font-size: 14px;
+          color: #7e7e7e;
+      line-height: 28px;
+    }
+    .footer-section .footer-social-icon span {
+      color: #fff;
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+    }
+    .footer-section .footer-social-icon a {
+      color: #fff;
+      font-size: 16px;
+      margin-right: 15px;
+    }
+    .footer-section .footer-social-icon i {
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 38px;
+      border-radius: 50%;
+    }
+    .footer-section .facebook-bg{
+      background: #3B5998;
+    }
+    .footer-section .twitter-bg{
+      background: #55ACEE;
+    }
+    .footer-section .google-bg{
+      background: #DD4B39;
+    }
+    .footer-section .footer-widget-heading h3 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .footer-section .footer-widget-heading h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      height: 2px;
+      width: 50px;
+      background: #2aafe5;
+    }
+    .footer-section .footer-widget ul li {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      margin-bottom: 12px;
+    }
+    .footer-section .footer-widget ul li a:hover{
+      color: #2aafe5;
+    }
+    .footer-section .footer-widget ul li a {
+      color: #878787;
+      text-transform: capitalize;
+    }
+    .footer-section .subscribe-form {
+      position: relative;
+      overflow: hidden;
+    }
+    .footer-section .subscribe-form input {
+      width: 100%;
+      padding: 14px 28px;
+      background: #2E2E2E;
+      border: 1px solid #2E2E2E;
+      color: #fff;
+    }
+    .footer-section .subscribe-form button {
+        position: absolute;
+        right: 0;
+        background: #2aafe5;
+        padding: 13px 20px;
+        border: 1px solid #2aafe5;
+        top: 0;
+    }
+    .footer-section .subscribe-form button i {
+      color: #fff;
+      font-size: 22px;
+      transform: rotate(-6deg);
+    }
+    .footer-section .copyright-area{
+      background: #202020;
+      padding: 25px 0;
+    }
+    .footer-section .copyright-text p {
+      margin: 0;
+      font-size: 14px;
+      color: #878787;
+    }
+    .footer-section .copyright-text p a{
+      color: #2aafe5;
+    }
+    .footer-section .footer-menu li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    .footer-section .footer-menu li:hover a{
+      color: #2aafe5;
+    }
+    .footer-section .footer-menu li a {
+      font-size: 14px;
+      color: #878787;
+    }
+    .footer-section a{
+        text-decoration: none;
+    }
+    .footer-section .social-icon img{
+        width: 45%;
+    }
+    .footer-section .social-icon #blue{
+        display: none;
+    }
+    .footer-section .social-icon:hover #white {
+        display: none;
+    }
+    .footer-section .social-icon:hover #blue{
+        display: block;
+    }
+    /* Demo */
+    .footer-section .partners img {
+        width: 50%;
+    }
+    .footer-section .partners div{
+        margin-top: 1rem;
+    }
+
+  
+  /* Color Variables */
+  /* Social Icon Mixin */
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .social-icon:hover {
+    color: #fff;
+  }
+  .social-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -150%);
+  }
+  .social-icon:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+  }
+  .social-icon--linkedin {
+    background: #006599;
+    color: #fff;
+  }
+  .social-icon--linkedin .tooltip {
+    background: #006599;
+    color: currentColor;
+  }
+  .social-icon--linkedin .tooltip:after {
+    border-top-color: #006599;
+  }
+  .social-icon--twitter {
+    background: #2b97f1;
+    color: #fff;
+  }
+  .social-icon--twitter .tooltip {
+    background: #2b97f1;
+    color: currentColor;
+  }
+  .social-icon--twitter .tooltip:after {
+    border-top-color: #2b97f1;
+  }
+  .social-icon--codepen {
+    background: #000;
+    color: #fff;
+  }
+  .social-icon--codepen .tooltip {
+    background: #000;
+    color: currentColor;
+  }
+  .social-icon--codepen .tooltip:after {
+    border-top-color: #000;
+  }
+  .social-icon--facebook {
+    background: #3b5a9b;
+    color: #fff;
+  }
+  .social-icon--facebook .tooltip {
+    background: #3b5a9b;
+    color: currentColor;
+  }
+  .social-icon--facebook .tooltip:after {
+    border-top-color: #3b5a9b;
+  }
+  .social-icon--huggingface {
+    background: #FFD21E;
+    color: #fff;
+  }
+  .social-icon--huggingface .tooltip {
+    background: #FFD21E;
+    color: currentColor;
+  }
+  .social-icon--huggingface .tooltip:after {
+    border-top-color: #FFD21E;
+  }
+  .social-icon--instagram {
+    background: #527fa6;
+    color: #fff;
+  }
+  .social-icon--instagram .tooltip {
+    background: #527fa6;
+    color: currentColor;
+  }
+  .social-icon--instagram .tooltip:after {
+    border-top-color: #527fa6;
+  }
+  .social-icon--dribbble {
+    background: #ef5a92;
+    color: #fff;
+  }
+  .social-icon--dribbble .tooltip {
+    background: #ef5a92;
+    color: currentColor;
+  }
+  .social-icon--dribbble .tooltip:after {
+    border-top-color: #ef5a92;
+  }
+  .social-icon--github {
+    background: #000000;
+    color: #fff;
+  }
+  .social-icon--github .tooltip {
+    background: #000000;
+    color: currentColor;
+  }
+  .social-icon--github .tooltip:after {
+    border-top-color: #000000;
+  }
+  .social-icon i {
+    position: relative;
+    top: 1px;
+  }
+  
+  /* Tooltips */
+  .tooltip {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 0.8rem 1rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  .tooltip:after {
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    transform: translate(-50%, 100%);
+  }
+</style>
+
+  
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div style="margin-bottom: 20px;" class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <img src="{% static 'icons/location_blue.png' %}">
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>UIT: ST-13, Block 7, Gulshan-e-Iqbal, Karachi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;" class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <img src="{% static 'icons/phone_blue.png' %}">
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>UIT: +92 (213) 499 4305</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;" class="col-xl-4 col-md-4 mb-50">
+                        <div class="single-cta">
+                            <img src="{% static 'icons/mail_blue.png' %}">
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>merl@uit.edu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'images/MERLLogo_halfwhite.png' %}" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Accelerating Engineering Innovation</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <div class="social-icons">
+                                    
+                                    <a href="https://github.com/merledu" target="_blank" class="social-icon social-icon--github">
+                                      <i class="fa fa-github"></i>
+                                      <div class="tooltip">Github</div>
+                                    </a>
+                                    <a href="https://twitter.com/merluit" target="_blank" class="social-icon social-icon--twitter">
+                                      <i class="fa fa-twitter"></i>
+                                      <div class="tooltip">Twitter</div>
+                                    </a>
+                                    
+                                    <a href="https://www.linkedin.com/company/merluit/" target="_blank" class="social-icon social-icon--linkedin">
+                                      <i class="fa fa-linkedin"></i>
+                                      <div class="tooltip">LinkedIn</div>
+                                    </a>
+                                    <a href="https://www.facebook.com/merluit" target="_blank" class="social-icon social-icon--facebook">
+                                      <i class="fa fa-facebook"></i>
+                                      <div class="tooltip">Facebook</div>
+                                    </a>
+                                    <a href="https://huggingface.co/merledu" target="_blank" class="social-icon social-icon--huggingface">
+                                        <img src="{% static 'icons/huggingface.png' %}" width="10%">
+                                        <div class="tooltip">Huggingface</div>
+                                      </a>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'aboutus' %}">about us</a></li>
+                                <li><a href="{% url 'teamhome' %}">our team</a></li>
+                                <li><a href="{% url 'tab' %}">advisory board</a></li>
+                                <li><a href="{% url 'projects' %}">projects</a></li>
+                                <li><a href="{% url 'all_tapeouts' %}">tapeouts</a></li>
+                                <li><a href="{% url 'trainings' %}">trainings</a></li>
+                                <li><a href="{% url 'all_news' %}">Newsroom</a></li>
+                                <li><a href="{% url 'careers' %}">Careers</a></li>
+                                <li><a href="http://www.uitu.edu.pk/" target="_blank">Headquarters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Partnerships</h3>
+                            </div>
+                            <div class="partners row">
+                                {% for partner in partners %}
+                                <div class="col-6">
+                                    <img src="{{ partner.image.url }}" />
+                                </div>
+                            
+                            {% endfor %}
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2024 - Micro Electronics Research Lab</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+  
+  
